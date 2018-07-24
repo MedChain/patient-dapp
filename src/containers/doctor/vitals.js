@@ -3,8 +3,8 @@ import { Form, Text, Scope } from 'informed';
 import { Link } from 'react-router-dom'
 
 const Vitals = () => (
-  <div>
-    <h2>Enter John Does vitals</h2>
+  <div id="doctor-vitals">
+    <h2>Enter John Doe's vitals</h2>
     <Form id="doctor-form">
       <label htmlFor="name">First name:</label>
       <Text field="name" id="name" />
