@@ -8,7 +8,6 @@ const Vitals = () => (
     <Form id="doctor-form">
       <label htmlFor="name">First name:</label>
       <Text field="name" id="name" />
-      <br />
       <Scope scope="favorite">
         <label htmlFor="color">Favorite color:</label>
         <Text field="color" id="color" />
@@ -21,6 +20,7 @@ const Vitals = () => (
       <Text field="friends[1]" id="friend-1"/>
       <label htmlFor="friend-2">Friend 3:</label>
       <Text field="friends[2]" id="friend-2"/>
+      <br />
       <button type="submit">
         Submit
       </button>

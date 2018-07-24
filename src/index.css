@@ -12,6 +12,11 @@ body {
   background-color: #eee;
 }
 
+header {
+  padding: 10px;
+  background-color: #fff;
+}
+
 button:disabled {
   opacity: 0.5;
 }
@@ -37,54 +42,14 @@ button:disabled {
   box-sizing: border-box;
 }
 
-header {
-  padding: 10px;
+.button.active {
+  background-color: #33cc99;
+  color: white;
+}
+
+.framed-window {
+  margin: 2% auto;
+  width: 95%;
   background-color: #fff;
-}
-
-header div {
-  display: inline-block;
-}
-
-header div.left {
-  width: 30%;
-  float: left;
-}
-header div.center {
-  width: 20%;
-}
-header div.right {
-  width: 30%;
-  float: right;
-}
-header div.right a {
-  float: right;
-}
-
-.header-icon {
-  width: 40px;
-  height: 40px;
-  background-image: url(/images/medical-glyph-icons-preview.png);
-  background-size: 500px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  display: inline-block;
-}
-.header-icon.pill {
-  background-position: 0 0;
-}
-.header-icon.steth {
-  background-position: -40px 0;
-}
-.header-icon.pills {
-  background-position: -80px 0;
-}
-.header-icon.pill-flat {
-  background-position: -120px 0;
-}
-.header-icon.pills2 {
-  background-position: -160px 0;
-}
-.header-icon.heart {
-  background-position: -200px 0;
+  padding: 10px;
 }
