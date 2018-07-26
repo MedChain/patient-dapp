@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/lib/Async';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  savePatientList,
+  switchPatient,
+} from '../../modules/patient'
 
-type State = {
-  inputValue: string,
-};
 let optionItems = [];
 
 const filterResults = (inputValue: string) => {
@@ -30,17 +33,18 @@ const loadOptions = (inputValue, callback) => {
   });
 };
 
-export default class WithCallbacks extends Component<*, State> {
-  state = { inputValue: '' };
+
+class PatientSelector extends React.Component {
   handleInputChange = (newValue: string) => {
     const inputValue = newValue.value;
-    this.setState({ inputValue });
+    this.props.switchPatient(inputValue);
     return inputValue;
-  };
+  }
+
   render() {
+    console.log("The currentPatient = " + this.props.currentPatient);
     return (
       <div>
-        <pre>inputValue: "{this.state.inputValue}"</pre>
         <AsyncSelect
           cacheOptions
           loadOptions={loadOptions}
@@ -51,3 +55,22 @@ export default class WithCallbacks extends Component<*, State> {
     );
   }
 }
+
+const mapStateToProps = ({ patient }) => ({
+  patients: patient.patients,
+  isFetching: patient.isFetching,
+  currentPatient: patient.currentPatient
+})
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+      savePatientList,
+      switchPatient,
+    },
+    dispatch
+  )
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PatientSelector)
