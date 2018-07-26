@@ -1,9 +1,11 @@
 import React from 'react'
 import { Form, Text, Scope } from 'informed';
 import { Link } from 'react-router-dom'
+import PatientSelector from '../patient-selector/patient-selector'
 
 const Vitals = () => (
   <div id="doctor-vitals">
+    <PatientSelector />
     <h2>Enter John Doe's vitals</h2>
     <Form id="doctor-form">
       <label htmlFor="name">First name:</label>
