@@ -28,13 +28,27 @@ const loadOptions = (inputValue, callback) => {
           value: result.id,
           label: result.firstname + " " + result.lastname,
         }));
-      console.log(filterResults(inputValue));
+
       callback(filterResults(inputValue));
   });
 };
 
 
 class PatientSelector extends React.Component {
+  componentDidMount() {
+    fetch('http://localhost:3000/api/patient/all')
+        .then(response => {
+            return response.json();
+        }).then(data => {
+          // massage the data into option/label objects
+          const patientList = data.reduce((result, next) => {
+            result[next.id] = next;
+            return result;
+          }, {})
+          this.props.savePatientList(patientList);
+        });
+  }
+
   handleInputChange = (newValue: string) => {
     const inputValue = newValue.value;
     this.props.switchPatient(inputValue);

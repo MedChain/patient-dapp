@@ -2,33 +2,92 @@ import React from 'react'
 import { Form, Text, Scope } from 'informed';
 import { Link } from 'react-router-dom'
 import PatientSelector from '../patient-selector/patient-selector'
+import { connect } from 'react-redux'
 
-const Vitals = () => (
-  <div id="doctor-vitals">
-    <PatientSelector />
-    <h2>Enter John Doe's vitals</h2>
-    <Form id="doctor-form">
+const FormContent = () => (
+  <div>
+    <fieldset>
+      <legend>PII:</legend>
       <label htmlFor="name">First name:</label>
-      <Text field="name" id="name" />
-      <Scope scope="favorite">
-        <label htmlFor="color">Favorite color:</label>
-        <Text field="color" id="color" />
-        <label htmlFor="food">Favorite food:</label>
-        <Text field="food" id="food" />
+      <Text field="firstname" id="firstname" />
+      <label htmlFor="name">Last name:</label>
+      <Text field="lastname" id="lastname" />
+      <fieldset>
+        <legend>Address:</legend>
+        <Scope scope="address">
+          <label htmlFor="city">City:</label>
+          <Text field="city" id="city" />
+          <label htmlFor="state">State:</label>
+          <Text field="state" id="state" />
+        </Scope>
+      </fieldset>
+      <fieldset>
+        <legend>In Case of Emergency:</legend>
+        <label htmlFor="ice-0">Contact 1:</label>
+        <Text field="ice[0]" id="friend-0"/>
+        <label htmlFor="ice-1">Contact 2:</label>
+        <Text field="ice[1]" id="friend-1"/>
+        <label htmlFor="ice-2">Contact 3:</label>
+        <Text field="ice[2]" id="ice-2"/>
+      </fieldset>
+    </fieldset>
+    <fieldset>
+      <legend>Stats:</legend>
+      <Scope scope="stats">
+        <label htmlFor="heart-rate">Heart Rate:</label>
+        <Text field="heart-rate" id="heart-rate" />
+        <label htmlFor="blood-pressure">Blood Pressure:</label>
+        <Text field="blood-pressure" id="blood-pressure" />
+        <label htmlFor="temperature">Temperature:</label>
+        <Text field="temperature" id="temperature" />
+        <label htmlFor="respitory-rate">Respitory Rate:</label>
+        <Text field="respitory-rate" id="respitory-rate" />
+        <label htmlFor="height">Height:</label>
+        <Text field="height" id="height" />
+        <label htmlFor="weight">Weight:</label>
+        <Text field="weight" id="weight" />
       </Scope>
-      <label htmlFor="friend-0">Friend 1:</label>
-      <Text field="friends[0]" id="friend-0"/>
-      <label htmlFor="friend-1">Friend 2:</label>
-      <Text field="friends[1]" id="friend-1"/>
-      <label htmlFor="friend-2">Friend 3:</label>
-      <Text field="friends[2]" id="friend-2"/>
-      <br />
-      <button type="submit">
-        Submit
-      </button>
-      <Link to="/">Back to home</Link>
-    </Form>
+    </fieldset>
+    <button type="submit">
+      Submit
+    </button>
+    <Link to="/">Back to home</Link>
   </div>
 )
 
-export default Vitals
+class Vitals extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // Remember! This binding is necessary to make `this` work in the callback
+    this.setFormApi = this.setFormApi.bind(this);
+  }
+
+  setFormApi(formApi){
+    this.formApi = formApi;
+  }
+
+  render() {
+    this.props.patient && this.formApi && this.formApi.setValues(this.props.patient);
+    const name = (this.props.patient) ? this.props.patient.firstname + " " + this.props.patient.lastname : "a NEW patient's";
+    return (
+      <div id="doctor-vitals">
+        <PatientSelector />
+        <h2>Enter {name} vitals</h2>
+        <Form id="doctor-form" component={FormContent} getApi={this.setFormApi} />
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = ({ patient }) => ({
+  patient: patient.patients[patient.currentPatient] || null,
+  isFetching: patient.isFetching,
+  currentPatient: patient.currentPatient
+})
+
+
+export default connect(
+  mapStateToProps,
+  null
+)(Vitals)
