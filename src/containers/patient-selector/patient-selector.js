@@ -18,7 +18,7 @@ const filterResults = (inputValue: string) => {
 // Async load of options
 const loadOptions = (inputValue, callback) => {
   // from this url
-  fetch('http://localhost:3000/api/patient/all')
+  fetch('http://localhost:8080/api/patient/all')
       .then(response => {
           return response.json();
       }).then(data => {
@@ -36,7 +36,7 @@ const loadOptions = (inputValue, callback) => {
 
 class PatientSelector extends React.Component {
   componentDidMount() {
-    fetch('http://localhost:3000/api/patient/all')
+    fetch('http://localhost:8080/api/patient/all')
         .then(response => {
             return response.json();
         }).then(data => {

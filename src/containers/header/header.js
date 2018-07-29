@@ -12,7 +12,7 @@ const Header = props => (
           <img src="../images/medchainLogo.png" alt="medchain" title="medchain"/>
           MedChain
       </a>
-      <NavLink className="button" to="/" exact>Dashboard</NavLink>
+      <NavLink className="button" to="/" exact>Patient</NavLink>
       <NavLink className="button" to="/doctor">Doctor</NavLink>
     </div>
     <div className="center">
