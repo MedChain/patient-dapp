@@ -3,7 +3,7 @@ import AsyncSelect from 'react-select/lib/Async';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {
-  savePatientList,
+  fetchPatientList,
   switchPatient,
 } from '../../modules/patient'
 
@@ -15,38 +15,10 @@ const filterResults = (inputValue: string) => {
   );
 }
 
-// Async load of options
-const loadOptions = (inputValue, callback) => {
-  // from this url
-  fetch('http://localhost:8080/api/patient/all')
-      .then(response => {
-          return response.json();
-      }).then(data => {
-        // massage the data into option/label objects
-        console.log(data);
-        optionItems = data.map((result) => ({
-          value: result.id,
-          label: result.firstname + " " + result.lastname,
-        }));
-
-      callback(filterResults(inputValue));
-  });
-};
-
 
 class PatientSelector extends React.Component {
   componentDidMount() {
-    fetch('http://localhost:8080/api/patient/all')
-        .then(response => {
-            return response.json();
-        }).then(data => {
-          // massage the data into option/label objects
-          const patientList = data.reduce((result, next) => {
-            result[next.id] = next;
-            return result;
-          }, {})
-          this.props.savePatientList(patientList);
-        });
+    !this.props.isFetching && this.props.fetchPatientList();
   }
 
   handleInputChange = (newValue: string) => {
@@ -55,13 +27,27 @@ class PatientSelector extends React.Component {
     return inputValue;
   }
 
+  // Async load of options
+  loadOptions = (inputValue, callback) => {
+    // massage the data into option/label objects
+    optionItems = Object.keys(this.props.patients).map(key => ({
+      value: this.props.patients[key].id,
+      label: this.props.patients[key].firstname + " " + this.props.patients[key].lastname,
+    }));
+    if (optionItems.length > 0) {
+      console.log('this.props.patients=', this.props.patients);
+    } else {
+      console.log('BUG: need to switch screens and come back to fill in patient dropdown');
+    }
+    callback(filterResults(inputValue));
+  }
+
   render() {
-    console.log("The currentPatient = " + this.props.currentPatient);
     return (
       <div>
         <AsyncSelect
           cacheOptions
-          loadOptions={loadOptions}
+          loadOptions={this.loadOptions}
           defaultOptions
           onChange={this.handleInputChange}
         />
@@ -73,12 +59,11 @@ class PatientSelector extends React.Component {
 const mapStateToProps = ({ patient }) => ({
   patients: patient.patients,
   isFetching: patient.isFetching,
-  currentPatient: patient.currentPatient
 })
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-      savePatientList,
+      fetchPatientList,
       switchPatient,
     },
     dispatch

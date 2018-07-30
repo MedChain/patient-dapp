@@ -82,8 +82,6 @@ class Vitals extends React.Component {
 
 const mapStateToProps = ({ patient }) => ({
   patient: patient.patients[patient.currentPatient] || null,
-  isFetching: patient.isFetching,
-  currentPatient: patient.currentPatient
 })
 
 
