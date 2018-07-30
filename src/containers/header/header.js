@@ -11,8 +11,8 @@ const Header = props => (
       <a className="navbar-brand" href="/">
           <img src="../images/medchainLogo.png" alt="medchain" title="medchain"/>
       </a>
-      
-      <NavLink className="button" to="/" exact>Patient</NavLink>
+
+      <NavLink className="button" to="/" exact>Dashboard</NavLink>
       <NavLink className="button" to="/doctor">Doctor</NavLink>
     </div>
 
@@ -24,14 +24,14 @@ const Header = props => (
       <NavLink className="header-icon pill-flat" to="/temp-page5"></NavLink>
       <NavLink className="header-icon heart" to="/temp-page6"></NavLink>
     </div>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown link
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a className="dropdown-item" href="#">Action</a>
+          <a className="dropdown-item" href="#">Another action</a>
+          <a className="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
     <div className="right">

@@ -21,6 +21,7 @@ const App = () => (
     <Header/>
     <main>
       <Route exact path="/" component={Dashboard} />
+      <Route exact path="/patient/*" component={Dashboard} />
       <Route exact path="/doctor" component={Doctor} />
       <Route exact path="/na" component={NA} />
       <Route exact path="/profile" component={Profile} />

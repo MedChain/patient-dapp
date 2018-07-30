@@ -1,0 +1,29 @@
+.app-data {
+	height: 96px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.app-select {
+	height: 29.69%;
+	width: 100%;
+	background: linear-gradient(134.78deg, #46858D 0%, #4B5F7A 100%);
+}
+
+.app-select .button {
+  width: 180px;
+  height: 80px;
+  margin: 10px;
+  background: white;
+
+	border-radius: 3px;
+	box-shadow: 0 6px 9px 0 rgba(0,0,0,0.04);
+}
+
+.app-select .button.app-add-button {
+  background-image: url(/images/add.svg);
+  width: 20px;
+  display: inline-block;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  border: 0px;
+}
