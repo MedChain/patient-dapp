@@ -1,8 +1,7 @@
-header div {
+ header div {
   display: inline-block;
-}
-
-header div.left {
+} 
+ header div.left {
   width: 400px%;
   float: left;
 }
@@ -52,3 +51,18 @@ header div.right a.active {
 .header-icon.heart {
   background-position: -200px 0;
 }
+
+.support-3 {
+	height: 32px;
+	width: 32px;
+	opacity: 0.4;
+	/* background-color: #4B5F7A; */
+}
+.navbar .navbar-nav {
+  /* display: inline-block; */
+  float: none;
+  vertical-align: top;
+  margin:auto;
+}
+
+
