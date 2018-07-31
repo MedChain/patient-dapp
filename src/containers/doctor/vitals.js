@@ -19,48 +19,97 @@ const FormContent = () => (
       </div>
 
       <fieldset>
-        <legend>Address:</legend>
         <Scope scope="address">
         <div class="form-group">
           <label for="inputAddress">Address</label>
           <Text feild="Address" class="form-control"/>
           </div>
-          <label htmlFor="city">City:</label>
-          <Text field="city" id="city" />
-          <label htmlFor="state">State:</label>
-          <Text field="state" id="state" />
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label htmlFor="city">City:</label>
+              <Text class ="form-control"field="city" id="city" />
+              </div>
+              
+          <div class="form-group col-md-4">
+            <label htmlFor="state">State:</label>
+            <Text class="form-control" field="state" id="state" />
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <Text type="text" class="form-control" id="inputZip"/>
+            </div>
+            </div>
         </Scope>
       </fieldset>
       <fieldset>
-        <legend>In Case of Emergency:</legend>
-        <label htmlFor="ice-0">Contact 1:</label>
-        <Text field="ice[0]" id="friend-0"/>
-        <label htmlFor="ice-1">Contact 2:</label>
-        <Text field="ice[1]" id="friend-1"/>
-        <label htmlFor="ice-2">Contact 3:</label>
-        <Text field="ice[2]" id="ice-2"/>
+        <legend>Emergency Contacts</legend>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label htmlFor="ice-0">Contact 1 Name</label>
+            <Text class="form-control" field="ice[0]" id="friend-0"/>
+          </div>
+        <div class="form-group col-md-6">
+          <label htmlFor="name">Phone Number</label>
+          <Text class="form-control" field="lastname" id="lastname" />
+        </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <label htmlFor="ice-1">Contact 2 Name</label>
+            <Text class="form-control" field="ice[1]" id="friend-0"/>
+          </div>
+        <div class="form-group col-md-6">
+          <label htmlFor="name"> Phone Number</label>
+          <Text class="form-control" field="lastname" id="lastname" />
+        </div>
+      </div>
       </fieldset>
     </fieldset>
     <fieldset>
-      <legend>Stats:</legend>
+      <legend>Vitals</legend>
       <Scope scope="stats">
-        <label htmlFor="heart-rate">Heart Rate:</label>
-        <Text field="heart-rate" id="heart-rate" />
-        <label htmlFor="blood-pressure">Blood Pressure:</label>
-        <Text field="blood-pressure" id="blood-pressure" />
-        <label htmlFor="temperature">Temperature:</label>
-        <Text field="temperature" id="temperature" />
-        <label htmlFor="respitory-rate">Respitory Rate:</label>
-        <Text field="respitory-rate" id="respitory-rate" />
-        <label htmlFor="height">Height:</label>
-        <Text field="height" id="height" />
-        <label htmlFor="weight">Weight:</label>
-        <Text field="weight" id="weight" />
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" htmlFor="heart-rate">HeartRate:</label>
+          <div class="col-sm-10">
+            <Text class ="form-control" field="heart-rate" id="heart-rate" />
+            </div>
+            </div>
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label" htmlFor="blood-pressure">Blood Pressure:</label>
+          <div class="col-sm-10">
+          <Text class ="form-control" field="blood-pressure" id="blood-pressure" />
+          </div>
+          </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" htmlFor="temperature">Temperature:</label>
+          <div class="col-sm-10">
+          <Text class ="form-control" field="temperature" id="temperature" />
+          </div>
+          </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" htmlFor="respitory-rate">Respitory Rate:</label>
+          <div class="col-sm-10">
+          <Text class ="form-control" field="respitory-rate" id="respitory-rate" />
+          </div>
+          </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" htmlFor="height">Height:</label>
+          <div class="col-sm-10">
+          <Text class ="form-control" field="height" id="height" />
+          </div>
+          </div>
+        <div class="form-group row">  
+        <label class="col-sm-2 col-form-label" htmlFor="weight">Weight:</label>
+        <div class="col-sm-10">
+        <Text class ="form-control" field="weight" id="weight" />
+        </div>
+          </div>
       </Scope>
     </fieldset>
-    <button type="submit">
-      Submit
-    </button>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
     <Link to="/">Back to home</Link>
   </div>
 
