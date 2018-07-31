@@ -16,8 +16,7 @@ header div.right {
 header div.right a {
   float: right;
 }
-header div.center a.active,
-header div.right a.active {
+#navbarSupportedContent a.active {
   border-bottom: 5px solid #33cc99;
 }
 .navbar{

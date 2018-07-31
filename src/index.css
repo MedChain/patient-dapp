@@ -13,7 +13,7 @@ body {
     sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: #eee;
+  background: url("/images/medchainBackground.png")
 }
 
 header {
