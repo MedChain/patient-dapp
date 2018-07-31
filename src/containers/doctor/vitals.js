@@ -5,16 +5,26 @@ import PatientSelector from '../patient-selector/patient-selector'
 import { connect } from 'react-redux'
 
 const FormContent = () => (
-  <div>
+<div>
     <fieldset>
-      <legend>PII:</legend>
-      <label htmlFor="name">First name:</label>
-      <Text field="firstname" id="firstname" />
-      <label htmlFor="name">Last name:</label>
-      <Text field="lastname" id="lastname" />
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label htmlFor="name">First Name:</label>
+          <Text class="form-control" field="firstname" id="firstname" />
+        </div>
+      <div class="form-group col-md-6">
+        <label htmlFor="name">Last Name:</label>
+        <Text class="form-control" field="lastname" id="lastname" />
+      </div>
+      </div>
+
       <fieldset>
         <legend>Address:</legend>
         <Scope scope="address">
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <Text feild="Address" class="form-control"/>
+          </div>
           <label htmlFor="city">City:</label>
           <Text field="city" id="city" />
           <label htmlFor="state">State:</label>
@@ -53,6 +63,13 @@ const FormContent = () => (
     </button>
     <Link to="/">Back to home</Link>
   </div>
+
+
+
+
+
+
+  
 )
 
 class Vitals extends React.Component {
