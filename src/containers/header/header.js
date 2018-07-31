@@ -57,22 +57,22 @@ const Header = props => (
   <div class="collapse navbar-collapse" id="navbarSupportedContent" align="center">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"><span class="sr-only">(current)</span>
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span>
           <img class="support-3" src="../images/heartbeat-3.png"/>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" >
+        <a class="nav-link" href="#">
         <img class="support-3" src="../images/messages.png"/>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" >
+        <a class="nav-link" href="#" >
         <img class="support-3" src="../images/calender.png"/>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" >
+        <a class="nav-link" href="#" >
         <img class="support-3" src="../images/settings.png"/>
         </a>
       </li>
@@ -87,9 +87,9 @@ const Header = props => (
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      
     </ul>
-  
+    <NavLink className="nav-link" to="/profile">My Profile</NavLink>
+    <NavLink className="nav-link" to="/connect-app">Connect App</NavLink>
   </div>
 </nav>
 )
