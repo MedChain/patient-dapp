@@ -50,10 +50,13 @@ export const fetchPatientList = () => {
             return response.json();
         }).then(data => {
           // save data to patient state
-          const patientList = data.reduce((result, next) => {
-            result[next.id] = next;
-            return result;
-          }, {})
+          let patientList = []
+          if (data) {
+            patientList = data.reduce((result, next) => {
+              result[next.id] = next;
+              return result;
+            }, {})
+          }
           console.log("returning patientList=", patientList);
           dispatch({
             type: SAVE_LIST,
