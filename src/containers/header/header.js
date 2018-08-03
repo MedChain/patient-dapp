@@ -8,11 +8,11 @@ import './header.css'
 const Header = props => (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/">
-        <img src="../images/medchainLogo.png" alt="medchain" title="medchain"/>
+        <img class="logo" src="../images/medchainLogo.png" alt="medchain" title="medchain"/>
       </a>
       <div className="left" >
        <NavLink className="button" to="/" exact>Dashboard</NavLink>
-       <NavLink className="button" to="/temp-page2">Medical History</NavLink>
+       <NavLink className="button" to="/history">Medical History</NavLink>
       </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,8 +40,8 @@ const Header = props => (
         <img class="support-3" src="../images/settings.png"/>
         </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="dropdown">
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <img class="support-3" src="../images/connection.png"/>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,8 +51,17 @@ const Header = props => (
         </div>
       </li>
     </ul>
-    <NavLink className="nav-link" to="/doctor">My Profile</NavLink>
-    <NavLink className="nav-link" to="/connect-app">Connect App</NavLink>
+  
+    <NavLink className="nav-link" to="/doctor">
+      <span><img class="profile" src="https://static1.squarespace.com/static/55ecec2ae4b048d1ed402671/t/59f212ade9bfdff97985afaa/1516916823951/kara-circle-profile.png?format=500w"/> </span>
+    </NavLink>
+    <div>
+    <NavLink className="nav-link" to="/connect-app">
+    <img class="profile" src="../images/connect_app_icon.png"/>
+    <span>Connect App</span>
+    </NavLink>
+    </div>
+    
   </div>
 </nav>
 )
