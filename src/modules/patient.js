@@ -1,11 +1,14 @@
 export const LIST_REQUESTED = 'patient/LIST_REQUESTED'
+export const SAVE_PATIENT = 'patient/SAVE_PATIENT'
 export const SAVE_LIST = 'patient/SAVE_LIST'
 export const SWITCH_PATIENT = 'patient/SWITCH_PATIENT'
 
-const apiUrl = 'http://localhost:8080';
+const apiUrl = 'http://1.peers.medchain.global:8080';
+//const apiUrl = 'http://localhost:8080';
 
 const initialState = {
   patients: [],
+  patient: {},
   isFetching: false,
   currentPatient: 0,
 }
@@ -24,6 +27,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         patients: action.patientList,
+        isFetching: false,
+      }
+
+    case SAVE_PATIENT:
+      return {
+        ...state,
+        patient: action.data,
         isFetching: false,
       }
 
@@ -71,6 +81,23 @@ export const switchPatient = (patientId) => {
     dispatch({
       type: SWITCH_PATIENT,
       patientId,
+    })
+
+    dispatch({
+      type: LIST_REQUESTED
+    })
+
+    fetch(apiUrl+'/api/patient/'+patientId)
+      .then(response => {
+          return response.json();
+      }).then(data => {
+        if (data) {
+          console.log("returning patient=", data);
+          dispatch({
+            type: SAVE_PATIENT,
+            data,
+          })
+        }
     })
   }
 }
