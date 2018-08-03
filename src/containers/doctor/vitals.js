@@ -138,8 +138,8 @@ class Vitals extends React.Component {
     const name = (this.props.patient) ? this.props.patient.firstname + " " + this.props.patient.lastname : "a NEW patient's";
     return (
       <div id="doctor-vitals">
-        <PatientSelector />
-        <h2>Enter {name} vitals</h2>
+        {/* /* <PatientSelector /> */}
+        <h2>Update Profile</h2> 
         <Form id="doctor-form" component={FormContent} getApi={this.setFormApi} />
       </div>
     );

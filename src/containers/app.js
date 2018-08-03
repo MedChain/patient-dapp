@@ -6,6 +6,7 @@ import Doctor from './doctor/doctor'
 import Header from './header/header'
 import ConnectApp from './connect-app/connect-app'
 import Profile from './profile/profile'
+import History from './medical-history/historyIndex'
 import TempPage1 from './temp-page/temp-page1'
 import TempPage2 from './temp-page/temp-page2'
 import TempPage3 from './temp-page/temp-page3'
@@ -26,6 +27,7 @@ const App = () => (
       <Route exact path="/na" component={NA} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/connect-app" component={ConnectApp} />
+      <Route exact path="/history" component={History} />
       <Route exact path="/temp-page1" component={TempPage1} />
       <Route exact path="/temp-page2" component={TempPage2} />
       <Route exact path="/temp-page3" component={TempPage3} />

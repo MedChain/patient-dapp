@@ -12,7 +12,7 @@ const Header = props => (
       </a>
       <div className="left" >
        <NavLink className="button" to="/" exact>Dashboard</NavLink>
-       <NavLink className="button" to="/temp-page2">Medical History</NavLink>
+       <NavLink className="button" to="/history">Medical History</NavLink>
       </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
