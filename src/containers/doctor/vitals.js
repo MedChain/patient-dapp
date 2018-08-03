@@ -10,11 +10,11 @@ const FormContent = () => (
 <fieldset>
   <div class="form-row">
   <div class="form-group col-md-6">
-    <label htmlFor="name">First Name:</label>
+    <label htmlFor="name">First Name</label>
       <Text class="form-control" field="firstname" id="firstname" />
     </div>
   <div class="form-group col-md-6">
-    <label htmlFor="name">Last Name:</label>
+    <label htmlFor="name">Last Name</label>
     <Text class="form-control" field="lastname" id="lastname" />
   </div>
   </div>
@@ -27,12 +27,12 @@ const FormContent = () => (
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label htmlFor="city">City:</label>
+          <label htmlFor="city">City</label>
           <Text class ="form-control"field="city" id="city" />
           </div>
           
       <div class="form-group col-md-4">
-        <label htmlFor="state">State:</label>
+        <label htmlFor="state">State</label>
         <Text class="form-control" field="state" id="state" />
         </div>
         <div class="form-group col-md-2">
