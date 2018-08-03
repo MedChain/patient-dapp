@@ -12,7 +12,6 @@ const Page = () => (
   <p class="lead">
     <NavLink className="btn btn-primary btn-lg" to="/doctor" role="button">Add data to SMRC </NavLink>
   </p>
-  {/* <History /> */}
  </div>
 
 )
