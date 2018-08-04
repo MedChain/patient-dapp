@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import {
   switchPatient,
-  storePatient,
+  apiPostPatient,
 } from '../../modules/patient'
 
 import './profile.css'
@@ -103,7 +103,7 @@ class Profile extends React.Component {
   }
 
   submitForm(values){
-    this.props.storePatient(this.props.currentPatient, JSON.stringify(values));
+    this.props.apiPostPatient(this.props.currentPatient, values);
   }
 
   render() {
@@ -133,7 +133,7 @@ const mapStateToProps = ({ patient }) => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
       switchPatient,
-      storePatient,
+      apiPostPatient,
     },
     dispatch
   )

@@ -7,7 +7,7 @@ export const STORE_LIST = 'patient/STORE_LIST'
 export const SWITCH_PATIENT = 'patient/SWITCH_PATIENT'
 
 const apiUrl = 'http://1.peers.medchain.global:8080'
-//const apiUrl = 'http://localhost:8080';
+// const apiUrl = 'http://localhost:8080';
 
 const initialState = {
   patients: [],
@@ -81,7 +81,7 @@ export default (state = initialState, action) => {
 }
 
 // actions
-export const fetchPatientList = () => {
+export const apiGetPatientList = () => {
   return dispatch => {
     dispatch({
       type: LIST_REQUESTED
@@ -136,15 +136,26 @@ export const switchPatient = patientId => {
   }
 }
 
-export const storePatient = (patientId, patientData) => {
+export const apiPostPatient = (patientId, patientData) => {
   return dispatch => {
+    console.log('values=', patientData);
+    console.log('json=', JSON.stringify(patientData));
+
     dispatch({
       type: POST_SENT
     })
 
     fetch(apiUrl + '/api/patient/' + patientId, {
       method: 'POST',
-      body: patientData
+      mode: "cors", // no-cors, cors, *same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+          // "Content-Type": "application/json; charset=utf-8",
+          "Content-Type": "application/x-www-form-urlencoded",
+      },
+      // redirect: "follow", // manual, *follow, error
+      // referrer: "no-referrer", // no-referrer, *client
+      body: JSON.stringify(patientData), // body data type must match "Content-Type" header
     })
       .then(handleErrors)
       .then(response => {

@@ -3,7 +3,7 @@ import AsyncSelect from 'react-select/lib/Async';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {
-  fetchPatientList,
+  apiGetPatientList,
   switchPatient,
 } from '../../modules/patient'
 
@@ -18,7 +18,7 @@ const filterResults = (inputValue: string) => {
 
 class PatientSelector extends React.Component {
   componentDidMount() {
-    !this.props.isFetching && this.props.fetchPatientList();
+    !this.props.isFetching && this.props.apiGetPatientList();
   }
 
   handleInputChange = (newValue: string) => {
@@ -63,7 +63,7 @@ const mapStateToProps = ({ patient }) => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-      fetchPatientList,
+      apiGetPatientList,
       switchPatient,
     },
     dispatch
