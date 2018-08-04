@@ -9,11 +9,13 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-    sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif; */
   font-size: 1rem;
   line-height: 1.5;
-  background: url("/images/medchainBackground.png")
+  background: url("/images/medchainBackground.png");
+  font-family: 'Montserrat';
+
 }
 
 header {
@@ -56,4 +58,169 @@ button:disabled {
   width: 95%;
   background-color: #fff;
   padding: 10px;
+}
+.Patient{
+  position: absolute;
+  left: 2.57%;
+  right: 79%;
+  top: 30%;
+  bottom: 18%;
+
+  background: #FFFFFF;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+  border-radius: 3px;
+}
+.bottom-patient{
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 70.8%;
+  bottom: 0%;
+
+  background: #33CC99;
+  border-radius: 0px 0px 3px 3px;
+}
+.scheduled{
+position: absolute;
+left: 22%;
+right: 66%;
+top: 30%;
+bottom: 64.45%;
+
+background: #33CC99;
+border: 1px solid #1DBA86;
+box-sizing: border-box;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.126104);
+border-radius: 3px;
+}
+.s-block{
+  position: absolute;
+  left: 22%;
+  right: 2.92%;
+  top: 37%;
+  bottom: 18%;  
+}
+.row1{
+position: absolute;
+left: 0%;
+right: 2.92%;
+top: 0%;
+bottom: 68%;
+
+background: #FFFFFF;
+box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+border-radius: 3px 3px 0px 0px;
+}
+.apt {
+	position: absolute;
+left: 0%;
+right: 83.47%;
+top: 0%;
+bottom: 0%;
+
+	border-radius: 3px 0 0 0;
+	background-color: #4B5F7A;
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+}
+.row2{
+  position: absolute;
+  left: 0%;
+  right: 2.92%;
+  top: 33%;
+  bottom: 35%;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+  border-radius: 3px 3px 0px 0px;
+  }
+.row3{
+    position: absolute;
+    left: 0%;
+    right: 2.92%;
+    top: 66%;
+    bottom: 0%;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+    border-radius: 3px 3px 0px 0px;
+    }
+.avi{
+  position: absolute;
+  top:40px;
+}
+.p-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.p-name{
+  text-align: center; 
+  vertical-align: middle;
+  position: relative;
+  top:195px;
+  font-family: 'Montserrat';
+  color:#4B5F7A;
+  weight: 600;
+}
+.p-snapshot{
+  position: absolute;
+  top: 250px;
+  width: 50%;
+  height:50px;
+  border-top: 1px solid #E6E8EB;
+  border-bottom: 1px solid #E6E8EB;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Montserrat';
+  color:#4B5F7A;
+}
+.p-snapshotRight{
+  position: absolute;
+  top: 250px;
+  right:0%;
+  width: 50%;
+  height:50px;
+  border-top: 1px solid #E6E8EB;
+  border-bottom: 1px solid #E6E8EB;
+  text-align: center;
+  padding: 10px;
+  border-left:1px solid #E6E8EB;
+  font-family: 'Montserrat';
+  color:#4B5F7A;
+}
+
+.email{
+  width:100%;
+  position: absolute;
+  top: 290px;
+  text-align: center;
+  padding: 18px;
+  font-family: 'Montserrat';
+  color:#4B5F7A;
+}
+.reminder-header{
+  padding-left:40px;
+  padding-top:20px;
+  color:white
+}
+.reminder{
+  padding-left:40px;
+  padding-top:20px;
+  color:white;
+  font-style: italic;
+}
+.s-text{
+  text-align: center;
+  padding-top: 12px;
+  color:white;
+}
+.apt-text{
+  padding:30px;
+ font-size: 20px;
+ color: #FFFFFF
+}
+.apt-location{
+  font-size: 13px;
+  opacity: .5;
 }
