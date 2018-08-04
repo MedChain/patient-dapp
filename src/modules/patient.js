@@ -1,21 +1,32 @@
 export const LIST_REQUESTED = 'patient/LIST_REQUESTED'
-export const SAVE_PATIENT = 'patient/SAVE_PATIENT'
-export const SAVE_LIST = 'patient/SAVE_LIST'
+export const POST_SENT = 'patient/POST_SENT'
+export const POST_SUCCESS = 'patient/POST_SUCCESS'
+export const POST_FAILURE = 'patient/POST_FAILURE'
+export const STORE_PATIENT = 'patient/STORE_PATIENT'
+export const STORE_LIST = 'patient/STORE_LIST'
 export const SWITCH_PATIENT = 'patient/SWITCH_PATIENT'
 
-const apiUrl = 'http://1.peers.medchain.global:8080';
+const apiUrl = 'http://1.peers.medchain.global:8080'
 //const apiUrl = 'http://localhost:8080';
 
 const initialState = {
   patients: [],
   patient: {},
   isFetching: false,
-  currentPatient: 0,
+  isPosting: false,
+  currentPatient: 0
+}
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText)
+  }
+  return response
 }
 
 // reducers
 export default (state = initialState, action) => {
-  console.log('action.type=', action.type);
+  console.log('action.type=', action.type)
   switch (action.type) {
     case LIST_REQUESTED:
       return {
@@ -23,24 +34,45 @@ export default (state = initialState, action) => {
         isFetching: true
       }
 
-    case SAVE_LIST:
+    case POST_SENT:
+      return {
+        ...state,
+        isPosting: true,
+        postError: null
+      }
+
+    case POST_SUCCESS:
+      return {
+        ...state,
+        isPosting: false,
+        postError: null
+      }
+
+    case POST_FAILURE:
+      return {
+        ...state,
+        isPosting: false,
+        postError: 'Error'
+      }
+
+    case STORE_LIST:
       return {
         ...state,
         patients: action.patientList,
-        isFetching: false,
+        isFetching: false
       }
 
-    case SAVE_PATIENT:
+    case STORE_PATIENT:
       return {
         ...state,
         patient: action.data,
-        isFetching: false,
+        isFetching: false
       }
 
     case SWITCH_PATIENT:
       return {
         ...state,
-        currentPatient: action.patientId,
+        currentPatient: action.patientId
       }
 
     default:
@@ -55,49 +87,80 @@ export const fetchPatientList = () => {
       type: LIST_REQUESTED
     })
 
-    fetch(apiUrl+'/api/patient/all')
-        .then(response => {
-            return response.json();
-        }).then(data => {
-          // save data to patient state
-          let patientList = []
-          if (data) {
-            patientList = data.reduce((result, next) => {
-              result[next.id] = next;
-              return result;
-            }, {})
-          }
-          console.log("returning patientList=", patientList);
-          dispatch({
-            type: SAVE_LIST,
-            patientList,
-          })
-    })
+    fetch(apiUrl + '/api/patient/all')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        // save data to patient state
+        let patientList = []
+        if (data) {
+          patientList = data.reduce((result, next) => {
+            result[next.id] = next
+            return result
+          }, {})
+        }
+        console.log('returning patientList=', patientList)
+        dispatch({
+          type: STORE_LIST,
+          patientList
+        })
+      })
   }
 }
 
-export const switchPatient = (patientId) => {
+export const switchPatient = patientId => {
   return dispatch => {
     dispatch({
       type: SWITCH_PATIENT,
-      patientId,
+      patientId
     })
 
     dispatch({
       type: LIST_REQUESTED
     })
 
-    fetch(apiUrl+'/api/patient/'+patientId)
+    fetch(apiUrl + '/api/patient/' + patientId)
       .then(response => {
-          return response.json();
-      }).then(data => {
+        return response.json()
+      })
+      .then(data => {
         if (data) {
-          console.log("returning patient=", data);
+          console.log('returning patient=', data)
           dispatch({
-            type: SAVE_PATIENT,
-            data,
+            type: STORE_PATIENT,
+            data
           })
         }
+      })
+  }
+}
+
+export const storePatient = (patientId, patientData) => {
+  return dispatch => {
+    dispatch({
+      type: POST_SENT
     })
+
+    fetch(apiUrl + '/api/patient/' + patientId, {
+      method: 'POST',
+      body: patientData
+    })
+      .then(handleErrors)
+      .then(response => {
+        dispatch({
+          type: POST_SUCCESS
+        })
+        dispatch({
+          type: STORE_PATIENT,
+          data: patientData,
+        })
+      })
+      .catch(error => {
+        dispatch({
+          type: POST_FAILURE,
+          error,
+        })
+      })
   }
 }

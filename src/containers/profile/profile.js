@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 import {
   switchPatient,
+  storePatient,
 } from '../../modules/patient'
 
 import './profile.css'
@@ -13,36 +14,36 @@ import './profile.css'
 const FormContent = () => (
   <div>
     <fieldset>
-      <div class="form-row">
-        <div class="form-group col-md-6">
+      <div className="form-row">
+        <div className="form-group col-md-6">
           <label htmlFor="firstname">First Name</label>
-          <Text class="form-control" field="firstname" id="firstname" />
+          <Text className="form-control" field="firstname" id="firstname" />
         </div>
-        <div class="form-group col-md-6">
+        <div className="form-group col-md-6">
           <label htmlFor="lastname">Last Name</label>
-          <Text class="form-control" field="lastname" id="lastname" />
+          <Text className="form-control" field="lastname" id="lastname" />
         </div>
       </div>
 
       <fieldset>
         <Scope scope="address">
-          <div class="form-group">
-            <label for="address">Address</label>
-            <Text class="form-control" field="address" id="address" />
+          <div className="form-group">
+            <label htmlFor="address">Address</label>
+            <Text className="form-control" field="address" id="address" />
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          <div className="form-row">
+            <div className="form-group col-md-6">
               <label htmlFor="city">City</label>
-              <Text class="form-control" field="city" id="city" />
+              <Text className="form-control" field="city" id="city" />
             </div>
 
-            <div class="form-group col-md-4">
+            <div className="form-group col-md-4">
               <label htmlFor="state">State</label>
-              <Text class="form-control" field="state" id="state" />
+              <Text className="form-control" field="state" id="state" />
             </div>
-            <div class="form-group col-md-2">
-              <label for="zip">Zip</label>
-              <Text class="form-control" field="zip" id="zip" />
+            <div className="form-group col-md-2">
+              <label htmlFor="zip">Zip</label>
+              <Text className="form-control" field="zip" id="zip" />
             </div>
           </div>
         </Scope>
@@ -50,33 +51,33 @@ const FormContent = () => (
       <fieldset>
         <legend>Emergency Contacts</legend>
         <Scope scope="ice[0]">
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          <div className="form-row">
+            <div className="form-group col-md-6">
               <label htmlFor="name">Contact 1 Name</label>
-              <Text class="form-control" field="name" id="name" />
+              <Text className="form-control" field="name" id="name" />
             </div>
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <label htmlFor="phone">Phone Number</label>
-              <Text class="form-control" field="phone" id="phone" />
+              <Text className="form-control" field="phone" id="phone" />
             </div>
           </div>
         </Scope>
         <Scope scope="ice[1]">
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          <div className="form-row">
+            <div className="form-group col-md-6">
               <label htmlFor="name">Contact 2 Name</label>
-              <Text class="form-control" field="name" id="name" />
+              <Text className="form-control" field="name" id="name" />
             </div>
-            <div class="form-group col-md-6">
+            <div className="form-group col-md-6">
               <label htmlFor="phone"> Phone Number</label>
-              <Text class="form-control" field="phone" id="phone" />
+              <Text className="form-control" field="phone" id="phone" />
             </div>
           </div>
         </Scope>
       </fieldset>
     </fieldset>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-2">
+    <div className="col-auto">
+      <button type="submit" className="btn btn-primary mb-2">
         Submit
       </button>
     </div>
@@ -90,6 +91,7 @@ class Profile extends React.Component {
 
     // Remember! This binding is necessary to make `this` work in the callback
     this.setFormApi = this.setFormApi.bind(this)
+    this.submitForm = this.submitForm.bind(this)
   }
 
   componentDidMount() {
@@ -98,6 +100,10 @@ class Profile extends React.Component {
 
   setFormApi(formApi) {
     this.formApi = formApi
+  }
+
+  submitForm(values){
+    this.props.storePatient(this.props.currentPatient, JSON.stringify(values));
   }
 
   render() {
@@ -112,6 +118,7 @@ class Profile extends React.Component {
           id="doctor-form"
           component={FormContent}
           getApi={this.setFormApi}
+          onSubmit={this.submitForm}
         />
       </div>
     )
@@ -119,12 +126,14 @@ class Profile extends React.Component {
 }
 
 const mapStateToProps = ({ patient }) => ({
-  patient: patient.patient || null
+  patient: patient.patient || null,
+  currentPatient: patient.currentPatient,
 })
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
       switchPatient,
+      storePatient,
     },
     dispatch
   )
