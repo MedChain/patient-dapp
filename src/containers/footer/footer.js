@@ -5,8 +5,15 @@ import { connect } from 'react-redux'
 import './footer.css'
 
 const Footer = props => (
-  <div>
-    Logs: {props.logs.map(object => (object.msg))}
+  <div id="footer">
+    Logs: {props.logs.map(object => {
+      return (
+        <span>
+          {object.msg}
+          <br/>
+        </span>
+      )
+    })}
   </div>
 )
 
