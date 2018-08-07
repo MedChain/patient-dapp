@@ -59,94 +59,19 @@ button:disabled {
   background-color: #fff;
   padding: 10px;
 }
+.content{
+  display:flex;
+  padding: 80px;
+}
 .Patient{
-  position: absolute;
-  left: 2.57%;
-  right: 79%;
-  top: 30%;
-  bottom: 18%;
-
+  position: relative;
+  max-width: 250px;
   background: #FFFFFF;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
   border-radius: 3px;
-}
-.bottom-patient{
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 70.8%;
-  bottom: 0%;
-
-  background: #33CC99;
-  border-radius: 0px 0px 3px 3px;
-}
-.scheduled{
-position: absolute;
-left: 22%;
-right: 66%;
-top: 30%;
-bottom: 64.45%;
-
-background: #33CC99;
-border: 1px solid #1DBA86;
-box-sizing: border-box;
-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.126104);
-border-radius: 3px;
-}
-.s-block{
-  position: absolute;
-  left: 22%;
-  right: 2.92%;
-  top: 37%;
-  bottom: 18%;  
-}
-.row1{
-position: absolute;
-left: 0%;
-right: 2.92%;
-top: 0%;
-bottom: 68%;
-
-background: #FFFFFF;
-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
-border-radius: 3px 3px 0px 0px;
-}
-.apt {
-	position: absolute;
-left: 0%;
-right: 83.47%;
-top: 0%;
-bottom: 0%;
-
-	border-radius: 3px 0 0 0;
-	background-color: #4B5F7A;
-	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
-}
-.row2{
-  position: absolute;
-  left: 0%;
-  right: 2.92%;
-  top: 33%;
-  bottom: 35%;
-  
-  background: #FFFFFF;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
-  border-radius: 3px 3px 0px 0px;
-  }
-.row3{
-    position: absolute;
-    left: 0%;
-    right: 2.92%;
-    top: 66%;
-    bottom: 0%;
-    
-    background: #FFFFFF;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
-    border-radius: 3px 3px 0px 0px;
-    }
-.avi{
-  position: absolute;
-  top:40px;
+  display:flex;
+  flex-direction: column;
+  height: 509px;
 }
 .p-image{
   display: block;
@@ -158,14 +83,14 @@ bottom: 0%;
   text-align: center; 
   vertical-align: middle;
   position: relative;
-  top:195px;
+  top:50px;
   font-family: 'Montserrat';
   color:#4B5F7A;
-  weight: 600;
+  
 }
 .p-snapshot{
-  position: absolute;
-  top: 250px;
+  position: relative;
+  top: 75px;
   width: 50%;
   height:50px;
   border-top: 1px solid #E6E8EB;
@@ -174,10 +99,11 @@ bottom: 0%;
   padding: 10px;
   font-family: 'Montserrat';
   color:#4B5F7A;
+  display:inline-block;
 }
 .p-snapshotRight{
-  position: absolute;
-  top: 250px;
+  position: relative;
+  top: 75px;
   right:0%;
   width: 50%;
   height:50px;
@@ -188,12 +114,13 @@ bottom: 0%;
   border-left:1px solid #E6E8EB;
   font-family: 'Montserrat';
   color:#4B5F7A;
+  display: inline-block;
 }
 
 .email{
   width:100%;
-  position: absolute;
-  top: 290px;
+  position: relative;
+  top: 63px;
   text-align: center;
   padding: 18px;
   font-family: 'Montserrat';
@@ -209,7 +136,89 @@ bottom: 0%;
   padding-top:20px;
   color:white;
   font-style: italic;
+  padding-bottom: 23px;
 }
+.ss{
+  display: inline-block;
+}
+.bottom-patient{
+  position: relative;
+  margin-top:auto;
+  background: #33CC99;
+  border-radius: 0px 0px 3px 3px;
+
+}
+.scheduled{
+position: relative;
+height:48px;
+width:142px;
+left:50px;
+
+background: #33CC99;
+border: 1px solid #1DBA86;
+box-sizing: border-box;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.126104);
+border-radius: 3px;
+}
+.s-block{
+  position: relative; 
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  top:66px;
+  left:-91px;
+}
+.s-block>*{
+  /* flex: 1 1 80px; */
+  max-width:170px
+}
+row1{ 
+/* position: relative;
+left: 0%;
+right: 2.92%;
+top: 0%;
+bottom: 68%; */
+box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+border-radius: 3px 3px 0px 0px;
+}
+.apt {
+	position: relative;
+/* left: 0%;
+right: 83.47%;
+top: 0%;
+bottom: 0%; */
+
+	border-radius: 3px 0 0 0;
+	background-color: #4B5F7A;
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+}
+.row2{
+  /* position: relative; */
+  /* left: 0%;
+  right: 2.92%;
+  top: 33%;
+  bottom: 35%; */
+  
+  
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+  border-radius: 3px 3px 0px 0px;
+  }
+.row3{
+    position: relative;
+    /* left: 0%;
+    right: 2.92%;
+    top: 66%;
+    bottom: 0%; */
+    
+    
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
+    border-radius: 3px 3px 0px 0px;
+    } */
+.avi{
+  position: relative;
+  top:40px;
+}
+
 .s-text{
   text-align: center;
   padding-top: 12px;
@@ -223,4 +232,47 @@ bottom: 0%;
 .apt-location{
   font-size: 13px;
   opacity: .5;
+}
+.content{
+  /* background: black */
+}
+#top-buttons{
+  height:45px;
+  
+  margin-bottom: 20px;
+}
+.container{
+  height:509px;
+}
+#scheduled{
+background: #33CC99;
+border: 1px solid #1DBA86;
+box-sizing: border-box;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.126104);
+border-radius: 3px;
+text-align: center;
+  padding-top: 10px;
+  color:white;
+}
+#main{
+  height:29%; 
+  background-color: #FFFFFF;
+  border-bottom: #cdcdcd medium solid;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+}
+#main-bottom{
+  height:29%; 
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+}
+#hosp{
+  /* border-radius: 3px 0 0 0; */
+	background-color: #4B5F7A;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+  /* border-bottom: #cdcdcd medium solid; */
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+}
+.dimg{
+  width:50%;
+  border-radius: 50%;
 }
