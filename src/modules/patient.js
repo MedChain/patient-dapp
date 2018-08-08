@@ -1,3 +1,7 @@
+import {
+  apiGetLogs,
+} from './logs'
+
 export const LIST_REQUESTED = 'patient/LIST_REQUESTED'
 export const POST_SENT = 'patient/POST_SENT'
 export const POST_SUCCESS = 'patient/POST_SUCCESS'
@@ -6,7 +10,8 @@ export const STORE_PATIENT = 'patient/STORE_PATIENT'
 export const STORE_LIST = 'patient/STORE_LIST'
 export const SWITCH_PATIENT = 'patient/SWITCH_PATIENT'
 
-const apiUrl = 'http://1.peers.medchain.global:8080'
+// const apiUrl = 'http://1.peers.medchain.global:8080'
+const apiUrl = 'https://84edem5d0i.execute-api.us-east-1.amazonaws.com/dev'
 // const apiUrl = 'http://localhost:8080';
 
 const initialState = {
@@ -106,6 +111,7 @@ export const apiGetPatientList = () => {
           patientList
         })
       })
+    dispatch(apiGetLogs())
   }
 }
 
@@ -133,6 +139,7 @@ export const switchPatient = patientId => {
           })
         }
       })
+    dispatch(apiGetLogs())
   }
 }
 
@@ -166,6 +173,7 @@ export const apiPostPatient = (patientId, patientData) => {
           type: STORE_PATIENT,
           data: patientData,
         })
+        dispatch(apiGetLogs())
       })
       .catch(error => {
         dispatch({

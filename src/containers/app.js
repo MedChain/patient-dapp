@@ -27,7 +27,7 @@ import {
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.apiGetLogs();
+    // this.props.apiGetLogs();
   }
 
   render() {
@@ -58,9 +58,10 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ patient }) => ({
-  patient: patient.patient || null,
-  currentPatient: patient.currentPatient,
+const mapStateToProps = (state, ownProps) => ({
+  patient: state.patient.patient || null,
+  currentPatient: state.patient.currentPatient,
+  state,
 })
 
 const mapDispatchToProps = dispatch =>
