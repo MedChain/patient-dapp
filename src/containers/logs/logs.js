@@ -6,7 +6,7 @@ import {
 } from '../../modules/logs'
 
 
-import './footer.css'
+import './logs.css'
 
 class Footer extends React.Component {
   componentDidMount() {
@@ -25,22 +25,20 @@ class Footer extends React.Component {
 
   render() {
     return (
-      <div id="footer">
-        <span id="title">Blockchain Logs (temp):</span>
-        <div id="logs">
+      <div id="logs">
+        <span id="title">Blockchain Logs:</span>
+        <div id="messages">
           {this.props.logs.map(object => {
             return (
-              <div>
-                <span>
-                  {object.msg}
-                  <br/>
-                </span>
-                <div style={{ float:"left", clear: "both" }}
-                   ref={(el) => { this.messagesEnd = el; }}>
-                </div>
-              </div>
+              <span>
+                {object.msg}
+                <br/>
+              </span>
             )
           })}
+          <div style={{ float:"left", clear: "both" }}
+             ref={(el) => { this.messagesEnd = el; }}>
+          </div>
         </div>
       </div>
     )

@@ -7,10 +7,10 @@ import Add from './add'
 
 const Page = () => (
   <div className="app-data">
-    <Route exact path="/patient/recent" component={Recent} />
-    <Route exact path="/patient/fitbit" component={Fitbit} />
-    <Route exact path="/patient/healthkit" component={Healthkit} />
-    <Route exact path="/patient/add" component={Add} />
+    <Route exact path="/devices/recent" component={Recent} />
+    <Route exact path="/devices/fitbit" component={Fitbit} />
+    <Route exact path="/devices/healthkit" component={Healthkit} />
+    <Route exact path="/devices/add" component={Add} />
   </div>
 )
 
