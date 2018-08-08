@@ -1,3 +1,7 @@
+import {
+  apiGetLogs,
+} from './logs'
+
 export const LIST_REQUESTED = 'patient/LIST_REQUESTED'
 export const POST_SENT = 'patient/POST_SENT'
 export const POST_SUCCESS = 'patient/POST_SUCCESS'
@@ -107,6 +111,7 @@ export const apiGetPatientList = () => {
           patientList
         })
       })
+    dispatch(apiGetLogs())
   }
 }
 
@@ -134,6 +139,7 @@ export const switchPatient = patientId => {
           })
         }
       })
+    dispatch(apiGetLogs())
   }
 }
 
@@ -167,6 +173,7 @@ export const apiPostPatient = (patientId, patientData) => {
           type: STORE_PATIENT,
           data: patientData,
         })
+        dispatch(apiGetLogs())
       })
       .catch(error => {
         dispatch({
