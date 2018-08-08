@@ -26,6 +26,10 @@ class Footer extends React.Component {
   render() {
     return (
       <div id="logs">
+        <div id="logs-tooltip" className="tooltip">
+          ?
+          <span className="tooltiptext">This is just a temporary debug window that will go away after a little bit more development.</span>
+        </div>
         <span id="title">Blockchain Logs:</span>
         <div id="messages">
           {this.props.logs.map(object => {
