@@ -82,13 +82,13 @@ button:disabled {
   width: 50%;
 }
 .p-name{
-  text-align: center; 
+  text-align: center;
   vertical-align: middle;
   position: relative;
   top:50px;
   font-family: 'Montserrat';
   color:#4B5F7A;
-  
+
 }
 .p-snapshot{
   position: relative;
@@ -163,7 +163,7 @@ box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.126104);
 border-radius: 3px;
 }
 .s-block{
-  position: relative; 
+  position: relative;
   display:flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -174,7 +174,7 @@ border-radius: 3px;
   /* flex: 1 1 80px; */
   max-width:170px
 }
-row1{ 
+row1{
 /* position: relative;
 left: 0%;
 right: 2.92%;
@@ -200,8 +200,8 @@ bottom: 0%; */
   right: 2.92%;
   top: 33%;
   bottom: 35%; */
-  
-  
+
+
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
   border-radius: 3px 3px 0px 0px;
   }
@@ -211,8 +211,8 @@ bottom: 0%; */
     right: 2.92%;
     top: 66%;
     bottom: 0%; */
-    
-    
+
+
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
     border-radius: 3px 3px 0px 0px;
     } */
@@ -240,7 +240,7 @@ bottom: 0%; */
 }
 #top-buttons{
   height:45px;
-  
+
   margin-bottom: 20px;
 }
 .container{
@@ -260,20 +260,20 @@ text-align: center;
   border: 1px solid #E0E0E0;
   border-radius: 3px;
   background-color: #FFFFFF;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.04); 
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.04);
 }
 .col-md-4{
   border-top: 1px solid #E0E0E0;
   border-radius: 3px;
 }
 #main{
-  height:29%; 
+  height:29%;
   background-color: #FFFFFF;
-  
+
   /* box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05); */
 }
 #main-bottom{
-  height:29%; 
+  height:29%;
   background-color: #FFFFFF;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
 }
@@ -291,4 +291,7 @@ text-align: center;
 #doc-prof{
   text-align: center;
   padding-top:10px;
+}
+.jumbotron {
+  margin: 7rem 7em 0;
 }
