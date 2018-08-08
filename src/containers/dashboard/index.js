@@ -78,9 +78,9 @@ const Page = () => (
           Dr.Smith
           </div>
         </div>
-        <div class="col-md-2">50%</div>
-        <div class="col-md-4">50%</div>
-        <div class="col-md-2">50%</div>
+        <div class="col-md-2">Time Date</div>
+        <div class="col-md-4">Notes</div>
+        <div class="col-md-2">Get Info</div>
       </div>
       <div class="row" id="main">
         <div class="col-md-2" id="hosp">
@@ -88,10 +88,16 @@ const Page = () => (
               <div class="apt-location">Boston, MA</div>
             </div>
         </div>
-        <div class="col-md-2">25%</div>
-        <div class="col-md-2">50%</div>
-        <div class="col-md-4">50%</div>
-        <div class="col-md-2">50%</div>
+        <div class="col-md-2">
+        <div class="doc-prof">
+          DOCTOR
+          <img class="dimg" src="http://medcare-c795.kxcdn.com/wp-content/uploads/2016/02/doctor-profile11.jpg"/>
+          Dr.Smith
+          </div>
+        </div>
+        <div class="col-md-2">Time Date</div>
+        <div class="col-md-4">Notes</div>
+        <div class="col-md-2">Get Info</div>
       </div>
       <div class="row" id="main-bottom">
         <div class="col-md-2" id="hosp">
@@ -101,10 +107,16 @@ const Page = () => (
           </div>
           </div>
         </div>
-        <div class="col-md-2">25%</div>
-        <div class="col-md-2">50%</div>
-        <div class="col-md-4">50%</div>
-        <div class="col-md-2">50%</div>
+        <div class="col-md-2">
+        <div class="doc-prof">
+          DOCTOR
+          <img class="dimg" src="http://medcare-c795.kxcdn.com/wp-content/uploads/2016/02/doctor-profile11.jpg"/>
+          Dr.Smith
+          </div>
+        </div>
+        <div class="col-md-2">Time Date</div>
+        <div class="col-md-4">Notes</div>
+        <div class="col-md-2">Get Info</div>
       </div>
     </div>
 

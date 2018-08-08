@@ -65,13 +65,15 @@ button:disabled {
 }
 .Patient{
   position: relative;
-  max-width: 250px;
+  max-width: 336px;
   background: #FFFFFF;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
   border-radius: 3px;
   display:flex;
   flex-direction: column;
   height: 509px;
+  align-items: center;
+  justify-content: center;
 }
 .p-image{
   display: block;
@@ -254,11 +256,21 @@ text-align: center;
   padding-top: 10px;
   color:white;
 }
+.col-md-2{
+  border: 1px solid #E0E0E0;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.04); 
+}
+.col-md-4{
+  border-top: 1px solid #E0E0E0;
+  border-radius: 3px;
+}
 #main{
   height:29%; 
   background-color: #FFFFFF;
-  border-bottom: #cdcdcd medium solid;
-  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
+  
+  /* box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05); */
 }
 #main-bottom{
   height:29%; 
