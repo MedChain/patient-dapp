@@ -60,13 +60,13 @@ const Page = () => (
 
     <div class="container">
       <div class="row" id="top-buttons">
-        <div class="col-md-2" id="scheduled">SCHEDULED</div>
-        <div class="col-md-2 offset-md-4">Add note</div>
-        <div class="col-md-2">Cancel Visit</div>
-        <div class="col-md-2">Make Payment</div>
+        <div class="col-md-2 buttons" id="scheduled">SCHEDULED</div>
+        <div class="col-md-2 offset-md-4 buttons">Add note</div>
+        <div class="col-md-2 buttons">Cancel Visit</div>
+        <div class="col-md-2 buttons">Make Payment</div>
       </div>
       <div class="row" id="main">
-        <div class="col-md-2" id="hosp">
+        <div class="col-md-2 hosp" id="hosp">
           <div class="apt-text">Dermatology Associates 
             <div class="apt-location">Winchester, MA</div>
           </div>  
@@ -83,7 +83,7 @@ const Page = () => (
         <div class="col-md-2">Get Info</div>
       </div>
       <div class="row" id="main">
-        <div class="col-md-2" id="hosp">
+        <div class="col-md-2 hosp" id="hosp">
           <div class="apt-text">Boston Physical Therapy 
               <div class="apt-location">Boston, MA</div>
             </div>
@@ -100,7 +100,7 @@ const Page = () => (
         <div class="col-md-2">Get Info</div>
       </div>
       <div class="row" id="main-bottom">
-        <div class="col-md-2" id="hosp">
+        <div class="col-md-2 hosp" id="hosp">
           <div class="apt">
           <div class="apt-text">Dermatology Associates 
             <div class="apt-location">Boston, MA</div>
