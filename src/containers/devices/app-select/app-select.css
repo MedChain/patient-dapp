@@ -1,29 +1,58 @@
 .app-data {
 	height: 96px;
 	background-color: rgba(255,255,255,0.1);
+  clear: both;
 }
 
 .app-select {
 	height: 29.69%;
 	width: 100%;
 	background: linear-gradient(134.78deg, #46858D 0%, #4B5F7A 100%);
+	float: left;
 }
 
 .app-select .button {
-  width: 180px;
-  height: 80px;
-  margin: 10px;
-  background: white;
-
+	background: white;
 	border-radius: 3px;
 	box-shadow: 0 6px 9px 0 rgba(0,0,0,0.04);
+	border: 0px;
+	display: inline-block;
+	float: left;
+	height: 80px;
+	margin: 10px;
+	padding: 10px;
+	width: 180px;
 }
 
-.app-select .button.app-add-button {
-  background-image: url(/images/add.svg);
-  width: 20px;
-  display: inline-block;
-  background-color: inherit;
+.app-select .button .app-icon {
+	width: 100px;
+  height: 30px;
   background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
   border: 0px;
+  margin: 27px 0px 0px;
+}
+
+.app-select .button.app-icon-add {
+	background-color: inherit;
+	width: 30px;
+}
+
+.app-select .button .app-icon-add {
+  background-image: url(/images/add.svg);
+  width: 30px;
+	margin: 18px 0 0;
+}
+
+.app-select .button .app-icon-fitbit {
+  background-image: url(/images/fitbit.png);
+	margin: 16px 0px 0px;
+}
+
+.app-select .button .app-icon-healthkit {
+  background-image: url(/images/healthkit.png);
+	width: 145px;
+	height: 40px;
+	margin: 10px 0px 0px;
 }

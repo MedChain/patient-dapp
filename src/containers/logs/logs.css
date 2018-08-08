@@ -9,7 +9,7 @@
   color: #333;
 }
 #logs #messages {
-  overflow: scroll;
+  overflow: auto;
   height: 85px;
   width: 100%;
 }
@@ -23,4 +23,46 @@
   margin: 10px auto;
   right: 0;
   left: 0;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    opacity: unset;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    z-index: 1;
+}
+
+#logs-tooltip {
+  position: absolute;
+  right: 25px;
+  background: #eca0a0;
+  border-radius: 25px;
+  width: 25px;
+  padding: 0px 8px 0;
+  font-weight: bold;
+}
+#logs-tooltip .tooltiptext {
+  width: 250px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
