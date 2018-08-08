@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import Footer from '../logs/logs'
+
 import './header.css'
 
 const Header = props => (
@@ -40,19 +42,24 @@ const Header = props => (
       align="center">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item active">
-          <NavLink className="nav-link" to="/temp-page-2">
+          <NavLink className="nav-link" to="/devices">
             <span className="sr-only">(current)</span>
             <img alt="" className="support-3" src="../images/heartbeat-3.png" />
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/temp-page-3">
+          <NavLink className="nav-link" to="/telemedicine">
             <img alt="" className="support-3" src="../images/messages.png" />
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/temp-page-4">
+          <NavLink className="nav-link" to="/scheduling">
             <img alt="" className="support-3" src="../images/calender.png" />
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink className="nav-link" to="/settings">
+            <img alt="" className="support-3" src="../images/settings.png" />
           </NavLink>
         </li>
         <li className="nav-item">
@@ -62,20 +69,19 @@ const Header = props => (
         </li>
 
         <li className="dropdown">
-          <a
+          <div
             className="nav-link"
-            href="#"
             id="navbarDropdown"
-            role="button"
             data-toggle="dropdown"
             aria-haspopup="true"
             aria-expanded="false">
             <img alt="" className="support-3" src="../images/connection.png" />
-          </a>
+          </div>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item">Secure Medical Record Blockchain</a>
-            <a className="dropdown-item"> Private IPFS coming soon</a>
+            <a className="dropdown-item">Secure Medical Record Chain</a>
+            <a className="dropdown-item"> Private IPFS</a>
             <div className="dropdown-divider" />
+            <Footer />
           </div>
         </li>
       </ul>

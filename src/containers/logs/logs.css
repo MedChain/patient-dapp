@@ -1,0 +1,26 @@
+#logs {
+  height: 120px;
+  width: 100%;
+  padding: .25rem 1.5rem;
+}
+#logs #title {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #333;
+}
+#logs #messages {
+  overflow: scroll;
+  height: 85px;
+  width: 100%;
+}
+
+#rootLogs {
+  border: 1px dashed #aaa;
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  background: #fdf6a2;
+  margin: 10px auto;
+  right: 0;
+  left: 0;
+}
