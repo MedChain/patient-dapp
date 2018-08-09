@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import {
-  switchPatient,
   apiPostPatient,
 } from '../../modules/patient'
 
@@ -88,17 +87,13 @@ const FormContent = () => (
 class Profile extends React.Component {
   constructor(props) {
     super(props)
-
     // Remember! This binding is necessary to make `this` work in the callback
     this.setFormApi = this.setFormApi.bind(this)
     this.submitForm = this.submitForm.bind(this)
   }
 
-  componentDidMount() {
-    !this.props.isFetching && this.props.switchPatient(1);
-  }
-
   setFormApi(formApi) {
+    this.forceUpdate(); //TODO: fix this. It is a hack because the form won't refill data when navigating away, then back to it.
     this.formApi = formApi
   }
 
@@ -132,7 +127,6 @@ const mapStateToProps = ({ patient }) => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-      switchPatient,
       apiPostPatient,
     },
     dispatch

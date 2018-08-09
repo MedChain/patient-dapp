@@ -1,8 +1,14 @@
 import React from 'react'
+import { bindActionCreators } from 'redux'
 import { Form, Text, Scope } from 'informed'
 import { Link } from 'react-router-dom'
 import PatientSelector from '../patient-selector/patient-selector'
 import { connect } from 'react-redux'
+
+import {
+  apiPostPatient,
+} from '../../modules/patient'
+
 
 const FormContent = () => (
   <div>
@@ -63,10 +69,15 @@ class Vitals extends React.Component {
 
     // Remember! This binding is necessary to make `this` work in the callback
     this.setFormApi = this.setFormApi.bind(this)
+    this.submitForm = this.submitForm.bind(this)
   }
 
   setFormApi(formApi) {
     this.formApi = formApi
+  }
+
+  submitForm(values){
+    this.props.apiPostPatient(this.props.currentPatient, values);
   }
 
   render() {
@@ -82,6 +93,7 @@ class Vitals extends React.Component {
           id="doctor-form"
           component={FormContent}
           getApi={this.setFormApi}
+          onSubmit={this.submitForm}
         />
       </div>
     )
@@ -89,10 +101,18 @@ class Vitals extends React.Component {
 }
 
 const mapStateToProps = ({ patient }) => ({
-  patient: patient.patients[patient.currentPatient] || null
+  patient: patient.patients[patient.currentPatient] || null,
+  currentPatient: patient.currentPatient,
 })
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+      apiPostPatient,
+    },
+    dispatch
+  )
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps,
 )(Vitals)

@@ -8,7 +8,7 @@ import {
 
 import './logs.css'
 
-class Footer extends React.Component {
+class Logs extends React.Component {
   componentDidMount() {
     this.props.apiGetLogs();
   }
@@ -32,17 +32,17 @@ class Footer extends React.Component {
         </div>
         <span id="title">Blockchain Logs:</span>
         <div id="messages">
-          {this.props.logs.map(object => {
+          {this.props.logs.map((object, i) => {
             return (
-              <span>
+              <span key={i}>
                 {object.msg}
                 <br/>
               </span>
             )
           })}
-          <div style={{ float:"left", clear: "both" }}
-             ref={(el) => { this.messagesEnd = el; }}>
-          </div>
+        </div>
+        <div style={{ float:"left", clear: "both" }}
+          ref={(el) => { this.messagesEnd = el; }}>
         </div>
       </div>
     )
@@ -62,4 +62,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Footer)
+)(Logs)

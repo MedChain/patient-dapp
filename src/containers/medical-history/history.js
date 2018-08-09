@@ -17,7 +17,7 @@ componentDidMount(){
     }).then(data=>{
         let pictures = data.results.map((pic) =>{
             return(
-                <div class="history" key={pic.results}>
+                <div className="history" key={pic.results}>
                     <img alt="" src={pic.picture.medium}/>
                 </div>
             )

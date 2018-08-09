@@ -1,9 +1,9 @@
 import React from 'react'
 import "./scheduling.css"
 const Page = () => (
-  <div class="jumbotron">
-  <h1 class="display-4">Scheduling Coming Soon</h1>
-  <p class="lead">
+  <div className="jumbotron">
+  <h1 className="display-4">Scheduling Coming Soon</h1>
+  <p className="lead">
     Your schedule of upcoming appointments.
   </p>
  </div>

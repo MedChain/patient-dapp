@@ -1,3 +1,6 @@
+.devices .app-select {
+  float: none;
+}
 img {
     display: block;
     margin-left: auto;
@@ -6,5 +9,5 @@ img {
 }
 .history{
     margin-bottom: 100px;
-    
+
 }

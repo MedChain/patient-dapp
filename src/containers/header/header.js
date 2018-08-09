@@ -27,6 +27,10 @@ const Header = props => (
       </NavLink>
       <Tutorial />
     </div>
+    <NavLink className="nav-link" to="/doctor">
+      Doctor<br/>Form<br/>(temp)
+    </NavLink>
+
     <button
       className="navbar-toggler"
       type="button"
@@ -61,11 +65,6 @@ const Header = props => (
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="/settings">
-            <img alt="" className="support-3" src="../images/settings.png" />
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/doctor">
             <img alt="" className="support-3" src="../images/settings.png" />
           </NavLink>
         </li>

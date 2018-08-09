@@ -7,7 +7,6 @@ import Dashboard from './dashboard'
 import NA from './na'
 import Doctor from './doctor/doctor'
 import Header from './header/header'
-import Logs from './logs/logs'
 import ConnectApp from './connect-app/connect-app'
 import Profile from './profile/profile'
 import History from './medical-history/historyIndex'
@@ -26,12 +25,15 @@ import TempPage8 from './temp-page/temp-page8'
 import TempPage9 from './temp-page/temp-page9'
 
 import {
-  apiGetLogs,
-} from '../modules/logs'
+  switchPatient,
+  apiGetPatientList,
+} from '../modules/patient'
+
 
 class App extends React.Component {
   componentDidMount() {
-    // this.props.apiGetLogs();
+    this.props.switchPatient(1);
+    this.props.apiGetPatientList(); //TODO: this can go away once /doctor path is removed
   }
 
   render() {
@@ -62,9 +64,6 @@ class App extends React.Component {
           <Route exact path="/temp-page8" component={TempPage8} />
           <Route exact path="/temp-page9" component={TempPage9} />
         </main>
-        <div id="rootLogs">
-          <Logs />
-        </div>
       </div>
     )
   }
@@ -78,7 +77,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({
-      apiGetLogs,
+      switchPatient,
+      apiGetPatientList,
     },
     dispatch
   )
