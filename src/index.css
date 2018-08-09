@@ -294,4 +294,5 @@ text-align: center;
 }
 .jumbotron {
   margin: 7rem 7em 0;
+  box-shadow: 3px 3px 5px 6px #ccc;
 }

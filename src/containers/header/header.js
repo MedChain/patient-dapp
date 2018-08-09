@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import Footer from '../logs/logs'
+import Tutorial from '../tutorial/tutorial'
 
 import './header.css'
 
@@ -24,6 +25,7 @@ const Header = props => (
       <NavLink className="button" to="/history">
         Medical History
       </NavLink>
+      <Tutorial />
     </div>
     <button
       className="navbar-toggler"
