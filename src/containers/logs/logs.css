@@ -16,7 +16,7 @@
 
 #rootLogs {
   border: 1px dashed #aaa;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 80%;
   background: #fdf6a2;

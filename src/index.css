@@ -14,7 +14,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   background: url("/images/medchainBackground.png");
-  font-family: 'Montserrat';
+  /* font-family: 'Montserrat'; */
 
 }
 
@@ -65,7 +65,7 @@ button:disabled {
 }
 .Patient{
   position: relative;
-  max-width: 336px;
+  max-width: 25%;
   background: #FFFFFF;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.0458277);
   border-radius: 3px;
@@ -74,6 +74,13 @@ button:disabled {
   height: 509px;
   align-items: center;
   justify-content: center;
+}
+@media screen and ( min-width: 1500px ) {
+  .Patient{
+    max-width: 343px;
+    right: -130px;
+  }
+
 }
 .p-image{
   display: block;
@@ -131,7 +138,9 @@ button:disabled {
 .reminder-header{
   padding-left:40px;
   padding-top:20px;
-  color:white
+  color:white;
+  letter-spacing: 1.6px;
+  font-size: 11px;
 }
 .reminder{
   padding-left:40px;
@@ -227,9 +236,10 @@ bottom: 0%; */
   color:white;
 }
 .apt-text{
-  padding:30px;
- font-size: 20px;
- color: #FFFFFF
+  padding-top:30px;
+ /* font-size: 20px; */
+ color: #FFFFFF;
+ /* font-size: 2.5vw; */
 }
 .apt-location{
   font-size: 13px;
@@ -245,6 +255,7 @@ bottom: 0%; */
 }
 .container{
   height:509px;
+  padding-left:75px;
 }
 #scheduled{
 background: #33CC99;
@@ -256,15 +267,25 @@ text-align: center;
   padding-top: 10px;
   color:white;
 }
-.col-md-2{
+.buttons {
   border: 1px solid #E0E0E0;
   border-radius: 3px;
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.04);
+  color: #4B5F7A;
+  letter-spacing: 1px;
+  text-align: center;
+  vertical-align: middle;
+}
+.col-md-2{
+  border-top: 1px solid #E0E0E0;
+  border-right: 1px solid #e0e0e0;
+  text-align: center;
 }
 .col-md-4{
   border-top: 1px solid #E0E0E0;
   border-radius: 3px;
+  border-right:1px solid #E0E0E0;
 }
 #main{
   height:29%;
@@ -277,7 +298,7 @@ text-align: center;
   background-color: #FFFFFF;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
 }
-#hosp{
+.hosp{
   /* border-radius: 3px 0 0 0; */
 	background-color: #4B5F7A;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.05);
@@ -287,11 +308,69 @@ text-align: center;
 .dimg{
   width:50%;
   border-radius: 50%;
-}
-#doc-prof{
-  text-align: center;
   padding-top:10px;
+  padding-bottom:10px;
 }
+.doc-prof{
+  padding-top: 17px;
+  text-align: center;
+}
+.dhead{
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.18px;
+  color: #33CC99;
+
+}
+.dName{
+  color: #4B5F7A;
+  width: 76px;
+  height: 16px;
+  font-size: 13px;
+  /* line-height: 16px; */
+  text-align: center;
+
+}
+.datetime{
+  color: #33CC99;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.18px;
+}
+.current{
+  text-align: center;
+  font-size: 14px;
+  color: #4B5F7A;
+}
+.dt{
+  padding-top:25px;
+}
+.noteHead{
+  padding:25px;
+  color: #33CC99;
+  font-size: 12px;
+  letter-spacing: 1.18px;
+}
+.note-content{
+  color: #4B5F7A;
+  font-size: 14px;
+}
+.info{
+  border: 1px solid #D5DEED;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07);
+  font-size: 12px;
+  letter-spacing: 1.85px;
+  color: #4B5F7A;
+}
+
 .jumbotron {
   margin: 7rem 7em 0;
   box-shadow: 3px 3px 5px 6px #ccc;
