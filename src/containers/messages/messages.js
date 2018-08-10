@@ -1,7 +1,7 @@
 import React from 'react'
 import "./messages.css"
 const Page = () => (
-  <div className="jumbotron">
+  <div className="messages jumbotron">
   <h1 className="display-4">Messages Coming Soon</h1>
   <p className="lead">
     This is your telemedicine page. You will be able to communicate with your doctor or doctor's office directly.

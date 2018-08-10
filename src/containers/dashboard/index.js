@@ -1,9 +1,12 @@
 import React from 'react'
 import AppSelect from '../devices/app-select/app-select'
+import AppData from '../devices/app-data/app-data'
 
 const Page = () => (
   <div>
-    <AppSelect />
+    <AppSelect>
+      <AppData />
+    </AppSelect>
     <div className="content">
     <div className="Patient">
       <div className="avi">

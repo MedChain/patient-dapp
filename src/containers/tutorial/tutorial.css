@@ -1,6 +1,7 @@
 #tutorial {
   display: inline-block;
-  margin: 0 10px;
+  margin: 2px 10px;
+  float: left;
 }
 .Overlay {
   position: fixed;

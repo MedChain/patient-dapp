@@ -25,11 +25,14 @@ const Header = props => (
       <NavLink className="button" to="/history">
         Medical History
       </NavLink>
-      <Tutorial />
     </div>
-    <NavLink className="nav-link" to="/doctor">
-      Doctor<br/>Form<br/>(temp)
+
+  <div className="temp-header">
+    <Tutorial />
+    <NavLink to="/doctor">
+      Doctor<br/>Form
     </NavLink>
+  </div>
 
     <button
       className="navbar-toggler"
