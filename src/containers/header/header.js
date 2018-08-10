@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import Footer from '../logs/logs'
 import Tutorial from '../tutorial/tutorial'
+import Status from '../SMRCstatus/status'
 
 import './header.css'
 
@@ -71,8 +72,8 @@ const Header = props => (
             <img alt="" className="support-3" src="../images/settings.png" />
           </NavLink>
         </li>
-
-        <li className="dropdown">
+        <Status />
+        {/* <li className="dropdown">
           <div
             className="nav-link"
             id="navbarDropdown"
@@ -87,7 +88,7 @@ const Header = props => (
             <div className="dropdown-divider" />
             <Footer />
           </div>
-        </li>
+        </li> */}
       </ul>
 
       <div>
