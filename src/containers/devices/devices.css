@@ -1,12 +1,12 @@
-.devices .app-select {
+.app-select {
   float: none;
 }
-.devices .app-fitbit {
+.app-fitbit {
   background: left / cover no-repeat url(/images/fitbit_stats.png);
   max-width: 1275px;
   height: 100%;
 }
-.devices .app-recent {
+.app-recent {
   background: left / cover no-repeat url(/images/dashboard_stats.png);
   max-width: 1275px;
   height: 100%;
