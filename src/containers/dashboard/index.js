@@ -44,7 +44,7 @@ const Page = () => (
           <div className="doc-prof">
           <div className="dhead"> DOCTOR</div>
           <img className="dimg" alt="" src="http://medcare-c795.kxcdn.com/wp-content/uploads/2016/02/doctor-profile11.jpg"/>
-            <span className="dName">Dr.Smith</span>
+            <div className="dName">Dr.Smith</div>
           </div>
         </div>
         <div className="col-md-2 dt">
@@ -73,7 +73,7 @@ const Page = () => (
         <div className="doc-prof">
         <div className="dhead"> DOCTOR</div>
           <img className="dimg" alt="" src="http://medcare-c795.kxcdn.com/wp-content/uploads/2016/02/doctor-profile11.jpg"/>
-          <span className="dName">Dr.Smith</span>
+          <div className="dName">Dr.Smith</div>
           </div>
         </div>
         <div className="col-md-2 dt">
@@ -104,7 +104,7 @@ const Page = () => (
         <div className="doc-prof">
           <div className="dhead"><strong> DOCTOR</strong></div>
           <img className="dimg" alt="" src="http://medcare-c795.kxcdn.com/wp-content/uploads/2016/02/doctor-profile11.jpg"/>
-          <span className="dName">Dr.Smith</span>
+          <div className="dName">Dr.Smith</div>
           </div>
         </div>
         <div className="col-md-2 dt">
