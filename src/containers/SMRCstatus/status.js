@@ -2,25 +2,31 @@ import React from 'react';
 import Modal from 'react-modal';
 import { NavLink } from 'react-router-dom'
 import Footer from '../logs/logs'
+import { ENGINE_METHOD_STORE } from 'constants';
+import {createStore, getState} from 'redux'
 
 
+
+function toggleStatus(state=true, action){
+  switch (action.type){
+    case 'OPEN': return true;
+    case 'CLOSE': return false;
+  }
+}
+const statusState = createStore(toggleStatus, true) 
 
 
 class Page extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      statusIsOpen: true
+      statusOpen: statusState.getState()
     };
-
-    this.openStatus = this.openStatus.bind(this);
-    this.afterOpenStatus = this.afterOpenStatus.bind(this);
-    this.closeStatus = this.closeStatus.bind(this);
   }
 
   openStatus() {
-    this.setState({statusIsOpen: true});
+    this.setState({statusOpen: true});
   }
 
   afterOpenStatus() {
@@ -34,7 +40,7 @@ class Page extends React.Component {
   render() {
     return (
     <div className="nav-wrapper">
-    <li className="dropdown nav-header">
+    <li className="dropdown nav-header" onClick={() => this.toggleList()}>
     
           <div
             className="nav-link"
@@ -60,43 +66,6 @@ class Page extends React.Component {
 
 export default Page
 
-
-
-
-
-// reducers
-// export default (state = initialState, action) => {
-//   switch (action.type) {
-//     case INCREMENT_REQUESTED:
-//       return {
-//         ...state,
-//         isIncrementing: true
-//       }
-
-//     case INCREMENT:
-//       return {
-//         ...state,
-//         count: state.count + 1,
-//         isIncrementing: !state.isIncrementing
-//       }
-
-//     case DECREMENT_REQUESTED:
-//       return {
-//         ...state,
-//         isDecrementing: true
-//       }
-
-//     case DECREMENT:
-//       return {
-//         ...state,
-//         count: state.count - 1,
-//         isDecrementing: !state.isDecrementing
-//       }
-
-//     default:
-//       return state
-//   }
-// }
 
 
 // export const changeStatus() = statusIsOpen
