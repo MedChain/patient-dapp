@@ -40,7 +40,7 @@ class Page extends React.Component {
   render() {
     return (
     <div className="nav-wrapper">
-    <li className="dropdown nav-header" onClick={() => this.toggleList()}>
+    <li className="dropdown nav-header" onClick={() => this.openStatus()}>
     
           <div
             className="nav-link"

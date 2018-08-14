@@ -29,10 +29,10 @@ const Page = () => (
 
     <div className="container">
       <div className="row" id="top-buttons">
-        <div className="col-md-2 buttons" id="scheduled">SCHEDULED</div>
-        <div className="col-md-2 offset-md-4 buttons">ADD NOTE</div>
-        <div className="col-md-2 buttons">CANCEL VISIT</div>
-        <div className="col-md-2 buttons">MAKE PAYMENT</div>
+        <button type="button" className="col-md-2 buttons btn btn-primary" id="scheduled">SCHEDULED</button>
+        <div className="col-md-2 offset-md-4 buttons btn btn-primary">ADD NOTE</div>
+        <div className="col-md-2 buttons btn btn-primary">CANCEL VISIT</div>
+        <div className="col-md-2 buttons btn btn-primary">MAKE PAYMENT</div>
       </div>
       <div className="row" id="main">
         <div className="col-md-2 hosp" id="hosp">
@@ -60,7 +60,7 @@ const Page = () => (
               </div>
         </div>
         <div className="col-md-2">
-          <div className="info">GET INFO</div>
+          <div className="info btn btn-primary">GET INFO</div>
         </div>
       </div>
       <div className="row" id="main">
@@ -89,7 +89,7 @@ const Page = () => (
               </div>
         </div>
         <div className="col-md-2">
-          <div className="info">GET INFO</div>
+          <div className="info btn btn-primary">GET INFO</div>
         </div>
       </div>
       <div className="row" id="main-bottom">
@@ -120,7 +120,7 @@ const Page = () => (
             </div>
           </div>
         <div className="col-md-2">
-            <div className="info">GET INFO</div>
+            <div className="info btn btn-primary">GET INFO</div>
         </div>
       </div>
     </div>
