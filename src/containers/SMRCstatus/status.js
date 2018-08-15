@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom'
 import Footer from '../logs/logs'
 import { ENGINE_METHOD_STORE } from 'constants';
 import {createStore, getState} from 'redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 
 import toggleDD from '../../modules/SMRCstatus'
@@ -13,26 +15,14 @@ class Page extends React.Component {
     componentDidMount() {
       this.props.toggleDD();
     }
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     statusOpen: statusState.getState()
-  //   };
-  // }
-
-  // openStatus() {
-  //   this.setState({statusOpen: true});
-  // }
-
-
-  // closeStatus() {
-  //   this.setState({statusIsOpen: false});
-  // }
+  }
   render() {
     return (
     <div className="nav-wrapper">
-    <li className="dropdown nav-header" onClick={() => this.openStatus()}>
+    <li className="dropdown nav-header" onClick={() => this.props.toggleDD}>
     
           <div
             className="nav-link"
@@ -56,7 +46,20 @@ class Page extends React.Component {
     }
   }
 
-export default Page
-
+  const mapStateToProps = (state, ownProps) => ({
+    toggle: state.SMRCstatus.toggle
+  })
+  
+  const mapDispatchToProps = dispatch =>
+    bindActionCreators({
+        toggleDD
+      },
+      dispatch
+    )
+  
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Page)
 
 
