@@ -7,14 +7,14 @@ import {createStore, getState} from 'redux'
 
 
 
-function toggleStatus(state=true, action){
+export const statusState = createStore(toggleStatus, true)
+
+export function toggleStatus(state=true, action){
   switch (action.type){
     case 'OPEN': return true;
     case 'CLOSE': return false;
   }
 }
-const statusState = createStore(toggleStatus, true) 
-
 
 class Page extends React.Component {
   constructor(props) {
@@ -29,10 +29,6 @@ class Page extends React.Component {
     this.setState({statusOpen: true});
   }
 
-  afterOpenStatus() {
-    // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = '#f00';
-  }
 
   closeStatus() {
     this.setState({statusIsOpen: false});
@@ -68,4 +64,3 @@ export default Page
 
 
 
-// export const changeStatus() = statusIsOpen
