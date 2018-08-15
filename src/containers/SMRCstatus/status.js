@@ -6,33 +6,29 @@ import { ENGINE_METHOD_STORE } from 'constants';
 import {createStore, getState} from 'redux'
 
 
+import toggleDD from '../../modules/SMRCstatus'
 
-export const statusState = createStore(toggleStatus, true)
-
-export function toggleStatus(state=true, action){
-  switch (action.type){
-    case 'OPEN': return true;
-    case 'CLOSE': return false;
-  }
-}
 
 class Page extends React.Component {
-  constructor(props) {
-    super(props);
+    componentDidMount() {
+      this.props.toggleDD();
+    }
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {
-      statusOpen: statusState.getState()
-    };
-  }
+  //   this.state = {
+  //     statusOpen: statusState.getState()
+  //   };
+  // }
 
-  openStatus() {
-    this.setState({statusOpen: true});
-  }
+  // openStatus() {
+  //   this.setState({statusOpen: true});
+  // }
 
 
-  closeStatus() {
-    this.setState({statusIsOpen: false});
-  }
+  // closeStatus() {
+  //   this.setState({statusIsOpen: false});
+  // }
   render() {
     return (
     <div className="nav-wrapper">

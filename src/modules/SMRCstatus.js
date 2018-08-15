@@ -32,6 +32,6 @@ export default (state=initialState, action) => {
 //actions
 export const toggleDD = () =>{
   return dispatch =>{
-
+    type: OPEN
   }
 }
