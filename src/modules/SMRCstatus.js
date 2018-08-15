@@ -1,14 +1,37 @@
-import react from react
 
 
-export const statusState = createStore(toggleStatus, true)
+// export const statusState = createStore(toggleStatus, true)
+export const OPEN = 'toggle/OPEN'
+export const CLOSE = 'toggle/CLOSE'
 
 
-export function toggleStatus(state=true, action){
+const initialState ={
+  toggle: false,
+}
+//reducers
+export default (state=initialState, action) => {
     switch (action.type){
-      case 'OPEN': return true;
-      case 'CLOSE': return false;
-    }
+      case OPEN: 
+        return {
+          ...state,
+          toggle: true
+        }
+      case CLOSE: 
+        return{
+          ...state,
+          toggle: false
+        } 
+      default: 
+        return {
+          ...state,
+          toggle:false
+        }
+      }
   }
   
-   
+//actions
+export const toggleDD = () =>{
+  return dispatch =>{
+
+  }
+}
