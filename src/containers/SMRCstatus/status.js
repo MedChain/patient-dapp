@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 
-import toggleDD from '../../modules/SMRCstatus'
+import { toggleDD } from '../../modules/SMRCstatus'
 
 
 class Page extends React.Component {
@@ -22,8 +22,8 @@ class Page extends React.Component {
   render() {
     return (
     <div className="nav-wrapper">
-    <li className="dropdown nav-header" onClick={() => this.props.toggleDD}>
-    
+    <li className="dropdown nav-header" onClick={this.props.toggleDD}>
+
           <div
             className="nav-link"
             id="navbarDropdown"
@@ -39,7 +39,7 @@ class Page extends React.Component {
             <div className="dropdown-divider" />
             <Footer />
           </div>
-          
+
         </li>
     </div>
       );
@@ -47,19 +47,17 @@ class Page extends React.Component {
   }
 
   const mapStateToProps = (state, ownProps) => ({
-    toggle: state.SMRCstatus.toggle
+    toggle: state.toggle.toggle
   })
-  
+
   const mapDispatchToProps = dispatch =>
     bindActionCreators({
         toggleDD
       },
       dispatch
     )
-  
+
   export default connect(
     mapStateToProps,
     mapDispatchToProps
   )(Page)
-
-

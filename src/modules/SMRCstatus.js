@@ -11,27 +11,22 @@ const initialState ={
 //reducers
 export default (state=initialState, action) => {
     switch (action.type){
-      case OPEN: 
+      case OPEN:
         return {
           ...state,
           toggle: true
         }
-      case CLOSE: 
+      case CLOSE:
         return{
           ...state,
           toggle: false
-        } 
-      default: 
-        return {
-          ...state,
-          toggle:false
         }
+      default:
+        return state
       }
   }
-  
+
 //actions
-export const toggleDD = () =>{
-  return dispatch =>{
+export const toggleDD = () =>({
     type: OPEN
-  }
-}
+  })
