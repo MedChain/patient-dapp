@@ -1,7 +1,7 @@
 
 
 // export const statusState = createStore(toggleStatus, true)
-export const OPEN = 'toggle/OPEN'
+export const TOGGLE = 'toggle/TOGGLE'
 export const CLOSE = 'toggle/CLOSE'
 
 
@@ -11,10 +11,10 @@ const initialState ={
 //reducers
 export default (state=initialState, action) => {
     switch (action.type){
-      case OPEN:
+      case TOGGLE:
         return {
           ...state,
-          toggle: true
+          toggle: !state.toggle
         }
       case CLOSE:
         return{
@@ -28,5 +28,5 @@ export default (state=initialState, action) => {
 
 //actions
 export const toggleDD = () =>({
-    type: OPEN
+    type: TOGGLE
   })
