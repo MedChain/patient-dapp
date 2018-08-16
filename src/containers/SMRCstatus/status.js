@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
 
 import { toggleDD } from '../../modules/SMRCstatus'
 
+Modal.setAppElement('#status')
 
 class Page extends React.Component {
     componentDidMount() {
@@ -17,13 +18,21 @@ class Page extends React.Component {
     }
   constructor(props) {
     super(props);
+    
 
   }
   render() {
     return (
     <div className="nav-wrapper">
     <li className="dropdown nav-header" onClick={this.props.toggleDD}>
-
+      <Modal
+            contentLabel="Status Modal"
+            isOpen={this.state.toggle}
+            // onAfterOpen={this.afterOpenModal}
+            // onRequestClose={this.closeModal}
+            // className="Modal"
+            // overlayClassName="Overlay"
+          >
           <div
             className="nav-link"
             id="navbarDropdown"
@@ -39,7 +48,7 @@ class Page extends React.Component {
             <div className="dropdown-divider" />
             <Footer />
           </div>
-
+      </Modal>
         </li>
     </div>
       );

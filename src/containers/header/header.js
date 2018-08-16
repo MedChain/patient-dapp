@@ -73,22 +73,7 @@ const Header = props => (
           </NavLink>
         </li>
         <Status />
-        {/* <li className="dropdown">
-          <div
-            className="nav-link"
-            id="navbarDropdown"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false">
-            <img alt="" className="support-3" src="../images/connection.png" />
-          </div>
-          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item">Secure Medical Record Chain</a>
-            <a className="dropdown-item"> Private IPFS</a>
-            <div className="dropdown-divider" />
-            <Footer />
-          </div>
-        </li> */}
+        <div id="status"></div> 
       </ul>
 
       <div>
