@@ -10,7 +10,16 @@ import { connect } from 'react-redux'
 
 import { toggleDD } from '../../modules/SMRCstatus'
 
+const mapStateToProps = (state, ownProps) => ({
+  toggle: state.toggle.toggle
+})
 
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({
+      toggleDD
+    },
+    dispatch
+  )
 
 class Page extends React.Component {
     componentDidMount() {
@@ -18,10 +27,23 @@ class Page extends React.Component {
     }
   constructor(props) {
     super(props);
-    
+    this.state = {
+      listOpen: this.props.toggle
+    }
+}
 
-  }
+handleClickOutside(){
+  this.setState({
+    listOpen: false
+  })
+}
+toggleList(){
+  this.setState(prevState => ({
+    listOpen: !prevState.listOpen
+  }))
+}
   render() {
+    const{listOpen} = this.state
     return (
     // <div className="dd-wrapper">
     //   <li className="dropdown dd-header">
@@ -37,31 +59,25 @@ class Page extends React.Component {
     //     </li>
     // </div>
     <div className="dd-wrapper">
-      <div className="dd-header">
+      <div className="dd-header" onClick={() => this.toggleList()}>
         <div className="dd-header-title">title</div>
+        {/* {listOpen
+          ? <FontAwesome name="angle-up" size="2x"/>
+          : <FontAwesome name="angle-down" size="2x"/>
+        } */}
       </div>
-      <ul className="dd-list">
-        <li className="dd-list-item">1</li>
-        <li className="dd-list-item">2</li>
-        <li className="dd-list-item">2</li>
-      </ul>
+      {listOpen && <ul className="dd-list">
+       {/* {list.map((item) => (
+         <li className="dd-list-item" key={item.id} >{item.title}</li>
+        ))} */}
+        <li className="dd-list-item">yay</li>
+      </ul>}
     </div>
-
-
-      );
-    }
-  }
-
-  const mapStateToProps = (state, ownProps) => ({
-    toggle: state.toggle.toggle
-  })
-
-  const mapDispatchToProps = dispatch =>
-    bindActionCreators({
-        toggleDD
-      },
-      dispatch
     )
+  }
+}
+
+  
 
   export default connect(
     mapStateToProps,
