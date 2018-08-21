@@ -15,8 +15,8 @@ const FormContent = () => (
     <fieldset>
       <div className="form-row">
         <div className="form-group col-md-6">
-          <label htmlFor="firstname">First Name</label>
-          <Text className="form-control" field="firstname" id="firstname" />
+          <label htmlFor="firstName">First Name</label>
+          <Text className="form-control" field="firstName" id="firstName" />
         </div>
         <div className="form-group col-md-6">
           <label htmlFor="lastname">Last Name</label>
@@ -53,11 +53,11 @@ const FormContent = () => (
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="name">Contact 1 Name</label>
-              <Text className="form-control" field="name" id="name" />
+              <Text className="form-control" field="ec1" id="name" />
             </div>
             <div className="form-group col-md-6">
               <label htmlFor="phone">Phone Number</label>
-              <Text className="form-control" field="phone" id="phone" />
+              <Text className="form-control" field="ec1-phone" id="phone" />
             </div>
           </div>
         </Scope>
@@ -65,11 +65,11 @@ const FormContent = () => (
           <div className="form-row">
             <div className="form-group col-md-6">
               <label htmlFor="name">Contact 2 Name</label>
-              <Text className="form-control" field="name" id="name" />
+              <Text className="form-control" field="ec2" id="name" />
             </div>
             <div className="form-group col-md-6">
               <label htmlFor="phone"> Phone Number</label>
-              <Text className="form-control" field="phone" id="phone" />
+              <Text className="form-control" field="ec2-phone" id="phone" />
             </div>
           </div>
         </Scope>
@@ -98,6 +98,8 @@ class Profile extends React.Component {
   }
 
   submitForm(values){
+    console.log("###################################################################################################")
+    console.log(values)
     this.props.apiPostPatient(this.props.currentPatient, values);
   }
 
@@ -113,7 +115,7 @@ class Profile extends React.Component {
           id="doctor-form"
           component={FormContent}
           getApi={this.setFormApi}
-          onSubmit={this.submitForm}
+          // onSubmit={this.submitForm}
         />
       </div>
     )

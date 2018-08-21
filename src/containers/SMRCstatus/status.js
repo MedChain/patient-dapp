@@ -45,34 +45,37 @@ toggleList(){
   render() {
     const{listOpen} = this.state
     return (
-    // <div className="dd-wrapper">
-    //   <li className="dropdown dd-header">
-    //       <div className="nav-link dd-title" id="navbarDropdown" data-toggle="dropdown">
-    //         <img alt="" className="support-3" src="../images/connection.png" />
-    //       </div>
-    //       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-    //         <a className="dropdown-item">Secure Medical Record Chain</a>
-    //         <a className="dropdown-item"> Private IPFS</a>
-    //         <div className="dropdown-divider" />
-    //         <Footer />
-    //       </div>
-    //     </li>
-    // </div>
     <div className="dd-wrapper">
-      <div className="dd-header" onClick={() => this.toggleList()}>
-        <div className="dd-header-title">title</div>
-        {/* {listOpen
-          ? <FontAwesome name="angle-up" size="2x"/>
-          : <FontAwesome name="angle-down" size="2x"/>
-        } */}
-      </div>
-      {listOpen && <ul className="dd-list">
-       {/* {list.map((item) => (
-         <li className="dd-list-item" key={item.id} >{item.title}</li>
-        ))} */}
-        <li className="dd-list-item">yay</li>
-      </ul>}
+      <li className="dropdown dd-header">
+          <div className="nav-link dd-title" id="navbarDropdown" data-toggle="dropdown">
+            <img alt="" className="support-3" src="../images/connection.png" />
+          </div>
+          <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a className="dropdown-item">Secure Medical Record Chain</a>
+            <a className="dropdown-item"> Private IPFS</a>
+            <div className="dropdown-divider" />
+            <Footer />
+          </div>
+        </li>
     </div>
+
+
+
+    // <div className="dd-wrapper">
+    //   <div className="dd-header" onClick={() => this.toggleList()}>
+    //     <div className="dd-header-title">title</div>
+    //     {/* {listOpen
+    //       ? <FontAwesome name="angle-up" size="2x"/>
+    //       : <FontAwesome name="angle-down" size="2x"/>
+    //     } */}
+    //   </div>
+    //   {listOpen && <ul className="dd-list">
+    //    {/* {list.map((item) => (
+    //      <li className="dd-list-item" key={item.id} >{item.title}</li>
+    //     ))} */}
+    //     <li className="dd-list-item">yay</li>
+    //   </ul>}
+    // </div>
     )
   }
 }
