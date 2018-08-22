@@ -115,7 +115,7 @@ class Profile extends React.Component {
           id="doctor-form"
           component={FormContent}
           getApi={this.setFormApi}
-          // onSubmit={this.submitForm}
+          onSubmit={this.submitForm}
         />
       </div>
     )

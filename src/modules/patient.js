@@ -11,8 +11,8 @@ export const STORE_LIST = 'patient/STORE_LIST'
 export const SWITCH_PATIENT = 'patient/SWITCH_PATIENT'
 
 // const apiUrl = 'http://1.peers.medchain.global:8080'
-const apiUrl = 'https://84edem5d0i.execute-api.us-east-1.amazonaws.com/dev'
-// const apiUrl = 'http://localhost:8080';
+// const apiUrl = 'https://84edem5d0i.execute-api.us-east-1.amazonaws.com/dev'
+const apiUrl = 'http://localhost:3000';
 
 const initialState = {
   patients: [],
