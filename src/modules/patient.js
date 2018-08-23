@@ -12,7 +12,7 @@ export const SWITCH_PATIENT = 'patient/SWITCH_PATIENT'
 
 // const apiUrl = 'http://1.peers.medchain.global:8080'
 // const apiUrl = 'https://84edem5d0i.execute-api.us-east-1.amazonaws.com/dev'
-const apiUrl = 'http://localhost:3000';
+const apiUrl = 'http://localhost:8081';
 
 const initialState = {
   patients: [],
@@ -94,6 +94,41 @@ export const apiGetPatientList = () => {
 
     fetch(apiUrl + '/api/patient/all')
       .then(response => {
+        
+        return response.json()
+      })
+      .then(data => {
+        // save data to patient state
+        let patientList = []
+
+        if (data) {
+          console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", data)
+          // patientList = data.reduce((result, next) => {
+          //   result[next.id] = next
+          //   console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", result)
+          //   return result
+          // }, {})
+          patientList = data
+        }
+        console.log('returning patientList=', patientList)
+        dispatch({
+          type: STORE_LIST,
+          patientList
+        })
+      })
+    dispatch(apiGetLogs())
+  }
+}
+
+
+export const apiGetPatient = () => {
+  return dispatch => {
+    dispatch({
+      type: LIST_REQUESTED
+    })
+
+    fetch(apiUrl + '/api/patient/all')
+      .then(response => {
         return response.json()
       })
       .then(data => {
@@ -101,6 +136,7 @@ export const apiGetPatientList = () => {
         let patientList = []
         if (data) {
           patientList = data.reduce((result, next) => {
+            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
             result[next.id] = next
             return result
           }, {})
@@ -114,6 +150,8 @@ export const apiGetPatientList = () => {
     dispatch(apiGetLogs())
   }
 }
+
+
 
 export const switchPatient = patientId => {
   return dispatch => {
